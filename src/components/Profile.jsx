@@ -1,17 +1,12 @@
 import styled from 'styled-components';
-import { FaGithub, FaLinkedin, FaBook, FaUser } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
-const ProfileContainer = styled.div`
-    max-width: 1100px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 3rem 1rem 2rem 1rem;
-`
+const ProfileContainer = styled.div``
 const TitlePage = styled.h1`
     font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
     margin-bottom: .8rem;
-    font-weight: 500;
+    font-weight: 700;
 `
 const DescriptionAboutMe = styled.p`
     font-family: 'Montserrat', sans-serif;
@@ -58,18 +53,20 @@ const LinkToPages = styled.div`
                 max-width: 300px;
                 a {
                     font-size: .8rem;
-                    color: #000;
                     font-weight: 500;
                 }
             }
         }
     }
 `
+const PageActual = styled.a`
+    color: #20a6ff;
+`
 
 const Profile = () => {
   return (
       <ProfileContainer>
-          <TitlePage>Henrique ⚡︎</TitlePage>
+          <TitlePage>Henrique</TitlePage>
           <DescriptionAboutMe>Bem-vindo aos meus artigos de programação! Encontre ensinamentos, dicas, componentes para estudo, erros e mais.</DescriptionAboutMe>
 
           <SocialMedias>
@@ -91,7 +88,7 @@ const Profile = () => {
             <nav>
                     <ul>
                         <li>
-                            <a href="">—————  Artigos »</a>
+                            <PageActual href="">—————  Artigos »</PageActual>
                         </li>
                         <li>
                             <a href="">————— Sobre mim »</a>
