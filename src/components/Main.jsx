@@ -24,7 +24,6 @@ const Main = () => {
           imgproject={'bg1.jpg'}
           imgalt={'VueJS x ReactJS x AngularJS'}
           titlearticle={'Qual melhor Framework após aprender JavaScript?'}
-          datearticle={'01/02/2024'}
           descriptionarticle={'Explore os melhores frameworks pós-JavaScript: React, Angular, Vue.js, destacando características e orientando na escolha para aprimorar habilidades de desenvolvimento web.'}
           linktoknowbetter={'#'}
         />
@@ -32,7 +31,6 @@ const Main = () => {
           imgproject={'styledcomponents.png'}
           imgalt={'Styled Components'}
           titlearticle={'Aprenda CSS-IN-JS com Styled Components.'}
-          datearticle={'01/02/2024'}
           descriptionarticle={'Explore a poderosa estilização em aplicações React com Styled Components. Aprenda CSS-IN-JS, aprimore suas habilidades e otimize o design web eficientemente.'}
           linktoknowbetter={'#'}
         />

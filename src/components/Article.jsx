@@ -31,22 +31,17 @@ const TextArticle = styled.div`
         font-weight: 500;
     }
 `
-const DateArticle = styled.p`
-    font-size: .1rem;
-    font-style: italic;
-`
 const DescriptionArticle = styled.p`
     font-size: .6rem;
     font-style: normal;
 `
 
-const Article = ({ imgproject, imgalt, titlearticle, datearticle, descriptionarticle, linktoknowbetter }) => {
+const Article = ({ imgproject, imgalt, titlearticle, descriptionarticle, linktoknowbetter }) => {
     return (
       <ArticleContainer>
         <img src={imgproject} alt={imgalt} />
         <TextArticle>
           <h2>{titlearticle}</h2>
-          <DateArticle>{datearticle}</DateArticle>
           <DescriptionArticle>{descriptionarticle}</DescriptionArticle>
           <LinkToKnowBetter href={linktoknowbetter}>Saiba mais »</LinkToKnowBetter>
         </TextArticle>
@@ -58,7 +53,6 @@ const Article = ({ imgproject, imgalt, titlearticle, datearticle, descriptionart
     imgproject: PropTypes.any.isRequired,
     imgalt: PropTypes.any.isRequired,
     titlearticle: PropTypes.any.isRequired,
-    datearticle: PropTypes.any.isRequired,
     descriptionarticle: PropTypes.any.isRequired,
     linktoknowbetter: PropTypes.any.isRequired,
   };
