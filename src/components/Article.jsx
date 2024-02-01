@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const ArticleContainer = styled.div`
     display: flex;
     img {
-        height: 170px;
+        width: 270px;
         border-radius: 15px;
     }
 `
@@ -13,12 +13,13 @@ const LinkToKnowBetter = styled.a`
     font-style: normal;
     color: #000;
     font-weight: 600;
+    margin-top: .5rem;
 `
 const TextArticle = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding: 0 1rem;
+    padding: .5rem 1rem;
     cursor: pointer;
     &:hover {
         ${LinkToKnowBetter} {

@@ -10,7 +10,9 @@ const MainContainer = styled.div`
     }
 `
 const AllArticles = styled.div`
-
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 `
 
 const Main = () => {
@@ -23,7 +25,15 @@ const Main = () => {
           imgalt={'VueJS x ReactJS x AngularJS'}
           titlearticle={'Qual melhor Framework após aprender JavaScript?'}
           datearticle={'01/02/2024'}
-          descriptionarticle={'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin feugiat mauris eget scelerisque ultricies. Mauris efficitur gravida turpis sed facilisis. Donec ornare, lacus ac dictum sodales, tellus orci porttitor neque, nec rutrum .'}
+          descriptionarticle={'Explore os melhores frameworks pós-JavaScript: React, Angular, Vue.js, destacando características e orientando na escolha para aprimorar habilidades de desenvolvimento web.'}
+          linktoknowbetter={'#'}
+        />
+        <Article
+          imgproject={'styledcomponents.png'}
+          imgalt={'Styled Components'}
+          titlearticle={'Aprenda CSS-IN-JS com Styled Components.'}
+          datearticle={'01/02/2024'}
+          descriptionarticle={'Explore a poderosa estilização em aplicações React com Styled Components. Aprenda CSS-IN-JS, aprimore suas habilidades e otimize o design web eficientemente.'}
           linktoknowbetter={'#'}
         />
       </AllArticles>
