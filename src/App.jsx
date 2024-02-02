@@ -13,8 +13,9 @@ const DivSeparate = styled.div`
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-
-  padding: 3rem 1rem 2rem 1rem;
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `
 
 const App = () => {
@@ -22,11 +23,9 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      
-      await new Promise(resolve => setTimeout(resolve, 4000));
+      await new Promise(resolve => setTimeout(resolve, 2700));
       setLoading(false); 
     };
-
     fetchData();
   }, []); 
 

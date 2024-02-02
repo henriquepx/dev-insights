@@ -1,7 +1,20 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
-const ProfileContainer = styled.div``
+const showingText = keyframes`
+  0% {
+        transform: translate3d(-20%, 0, 0);
+        opacity: .2;
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+`;
+
+const ProfileContainer = styled.div`
+    animation: ${showingText} 2s ease-in-out;   
+`
 const TitlePage = styled.h1`
     font-family: 'Montserrat', sans-serif;
     font-size: 3rem;

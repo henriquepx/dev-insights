@@ -1,11 +1,28 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components';
 import PropTypes from 'prop-types';
+
+const showingArticle = keyframes`
+  0% {
+        transform: translate3d(20%, 0, 0);
+        opacity: .2;
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+`;
 
 const ArticleContainer = styled.div`
     display: flex;
+    animation: ${showingArticle} 2.2s ease-in-out;
+    transition: .4s;
     img {
-        width: 270px;
+        max-width: 100%;
+        width: 300px;
         border-radius: 15px;
+    }
+    @media (max-width: 630px) {
+      flex-direction: column;
     }
 `
 const LinkToKnowBetter = styled.a`
@@ -30,6 +47,11 @@ const TextArticle = styled.div`
         font-size: 1.1rem;
         font-weight: 500;
     }
+    @media (max-width: 900px) {
+      padding: .7rem 0rem;
+    }
+
+
 `
 const DescriptionArticle = styled.p`
     font-size: .6rem;
