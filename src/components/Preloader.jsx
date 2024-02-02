@@ -2,54 +2,61 @@ import styled, { keyframes } from 'styled-components';
 
 const spin = keyframes`
   0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 `;
 
+const PreloaderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 98vh;
+  background-color: #222;
+`;
 
-const Spinner = styled.div`
-    top: 50%;
-    left: 50%;
-    color: #ffffff;
+const Loader = styled.div`
+  display: block;
+  width: 50px; /* Ajuste o tamanho conforme necessário */
+  height: 50px; /* Ajuste o tamanho conforme necessário */
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #dbdbdb;
+  animation: ${spin} 2s linear infinite;
+
+  &:before,
+  &:after {
+    content: "";
     position: absolute;
-    width: 5em; 
     border-radius: 50%;
-    height: 5em; 
-    box-shadow: inset 0 0 0 0.5em;
-    transform: translate3d(-50%, -50%, 0);
-    &::before, &::after {
-        position: absolute;
-        content: '';
-        border-radius: 50%;
-    }
-    &::before {
-        width: 2.6em; 
-        height: 5.1em; 
-        background: #07051a;
-        border-radius: 5.1em 0 0 5.1em;
-        top: -0.1em;
-        left: -0.1em;
-        transform-origin: 2.6em 2.55em; 
-        animation: ${spin} 2s infinite ease 1.5s;
-    }
-    &::after {
-        width: 2.6em; 
-        height: 5.1em; 
-        background: #07051a;
-        border-radius: 0 5.1em 5.1em 0;
-        top: -0.1em;
-        left: 2.5em;
-        transform-origin: 0px 2.55em; 
-        animation: ${spin} 2s infinite ease;
-    }
+    border: 3px solid transparent;
+    animation: ${spin} 3s linear infinite;
+  }
+
+  &:before {
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-top-color: #dfdfdf;
+  }
+
+  &:after {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-top-color: #c4c4c4;
+  }
 `;
 
 const Preloader = () => {
   return (
-    <Spinner />
+    <PreloaderContainer>
+      <Loader />
+    </PreloaderContainer>
   );
 };
 

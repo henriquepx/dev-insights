@@ -94,11 +94,11 @@ const Profile = () => {
                 <ul>
                     <li>
                         <FaLinkedin size={18} />
-                        <a href="">Henrique Pinheiro</a>
+                        <a href="https://www.linkedin.com/in/henriquepinheiroxavier/" rel="noreferrer" target="_blank">Henrique Pinheiro</a>
                     </li>
                     <li>
                         <FaGithub size={18} />
-                        <a href="">@henriquepx</a>
+                        <a href="https://github.com/henriquepx" rel="noreferrer" target="_blank">@henriquepx</a>
                     </li>
                 </ul>
             </nav>
@@ -108,10 +108,10 @@ const Profile = () => {
             <nav>
                     <ul>
                         <li>
-                            <PageActual href="">—————  Artigos »</PageActual>
+                            <PageActual href="#">—————  Artigos »</PageActual>
                         </li>
                         <li>
-                            <a href="">————— Sobre mim »</a>
+                            <a href="#">————— Sobre mim »</a>
                         </li>
                     </ul>
                 </nav>
