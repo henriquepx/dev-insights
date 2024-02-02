@@ -27,13 +27,19 @@ const DescriptionAboutMe = styled.p`
     max-width: 29ch;
 
     border-bottom: 1px solid #dfdfdf;
-    padding-bottom: 1rem;
+    padding-bottom: .7rem;
+    @media (max-width: 1023px) {
+        max-width: 100%;
+    }
 `
 const SocialMedias = styled.div`
-    padding-top: 1rem;
+    padding-top: .7rem;
     border-bottom: 1px solid #dfdfdf;
     padding-bottom: 1rem;
     width: 270px;
+    @media (max-width: 1023px) {
+        width: 100%;
+    }
     nav {
         ul {
             li {
@@ -41,7 +47,6 @@ const SocialMedias = styled.div`
                 align-items: center;
                 gap: 15px;
                 margin: 10px 0;
-
                 max-width: 300px;
                 a {
                     font-size: .8rem;
@@ -55,6 +60,7 @@ const SocialMedias = styled.div`
 const LinkToPages = styled.div`
     padding-top: 1rem;
     width: 270px;
+    
     nav {
         ul {
             li {
@@ -67,13 +73,14 @@ const LinkToPages = styled.div`
                 a {
                     font-size: .8rem;
                     font-weight: 500;
+                    color: #000000;
                 }
             }
         }
     }
 `
 const PageActual = styled.a`
-    color: #20a6ff;
+    color: #000000;
 `
 
 const Profile = () => {

@@ -14,14 +14,18 @@ const showingArticle = keyframes`
 
 const ArticleContainer = styled.div`
     display: flex;
+    gap: 20px;
     animation: ${showingArticle} 2.2s ease-in-out;
     transition: .4s;
     img {
         max-width: 100%;
         width: 300px;
         border-radius: 15px;
+        @media (max-width: 754px) {
+          max-width: 100%;
+        }
     }
-    @media (max-width: 630px) {
+    @media (max-width: 754px) {
       flex-direction: column;
     }
 `
@@ -36,13 +40,8 @@ const TextArticle = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding: .5rem 1rem;
+    padding: .65rem 0rem;
     cursor: pointer;
-    &:hover {
-        ${LinkToKnowBetter} {
-            color: #20a6ff;
-        }
-    }
     h2 {
         font-size: 1.1rem;
         font-weight: 500;
