@@ -129,17 +129,11 @@ const Header = () => {
             <div>
                 <NavHeader>
                     <UlHeader>
-                        {isSearchOpen ? (
-                            <SearchInput
-                                type="text"
-                                placeholder="Search..."
-                                ref={searchInputRef}
-                            />
-                        ) : (
-                            <IoSearch size={18} onClick={handleSearchClick} />
-                        )}
-                        <ChangeLanguage ref={languageButtonRef}>
-                            <AiOutlineGlobal size={18} onClick={handleLanguageClick} />
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Portfólio</a></li>
+
+                        <ChangeLanguage ref={languageButtonRef} onClick={handleLanguageClick}>
+                            <AiOutlineGlobal size={18} />
                             {isLanguageOpen && (
                                 <Dropdown>
                                     <LanguageList>
@@ -149,10 +143,18 @@ const Header = () => {
                                     </LanguageList>
                                 </Dropdown>
                             )}
-                            <IoIosArrowDown size={18} />
+                            <IoIosArrowDown size={18} onClick={handleLanguageClick} />
                         </ChangeLanguage>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Portfólio</a></li>
+
+                        {isSearchOpen ? (
+                            <SearchInput
+                                type="text"
+                                placeholder="Search..."
+                                ref={searchInputRef}
+                            />
+                        ) : (
+                            <IoSearch size={18} onClick={handleSearchClick} />
+                        )}
                     </UlHeader>
                 </NavHeader>
             </div>
