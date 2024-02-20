@@ -14,16 +14,15 @@ const PreloaderContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 98vh;
-  background-color: #222;
 `;
 
 const Loader = styled.div`
   display: block;
-  width: 50px; /* Ajuste o tamanho conforme necessário */
-  height: 50px; /* Ajuste o tamanho conforme necessário */
+  width: 50px; 
+  height: 50px; 
   border-radius: 50%;
   border: 3px solid transparent;
-  border-top-color: #dbdbdb;
+  border-top-color: #000000;
   animation: ${spin} 2s linear infinite;
 
   &:before,
@@ -40,7 +39,7 @@ const Loader = styled.div`
     left: 5px;
     right: 5px;
     bottom: 5px;
-    border-top-color: #dfdfdf;
+    border-top-color: #131313;
   }
 
   &:after {
@@ -48,7 +47,7 @@ const Loader = styled.div`
     left: 15px;
     right: 15px;
     bottom: 15px;
-    border-top-color: #c4c4c4;
+    border-top-color: #333333;
   }
 `;
 

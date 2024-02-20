@@ -4,9 +4,10 @@ import Profile from "./components/Profile"
 import GlobalStyles from './GlobalStyles';
 import styled from 'styled-components'
 import Preloader from './components/Preloader';
+import Header from './components/Header';
 
 const DivSeparate = styled.div`
-  padding: 3rem 1rem 2rem 1rem;
+  padding: 1rem 1rem 2rem 1rem;
   display: flex;
   gap: 50px;
 
@@ -38,6 +39,7 @@ const App = () => {
       {loading ? <Preloader /> :
         <div>
           <GlobalStyles />
+          <Header />
           <DivSeparate>
             <Profile />
             <Main />
