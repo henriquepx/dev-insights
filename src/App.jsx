@@ -5,6 +5,7 @@ import GlobalStyles from './GlobalStyles';
 import styled from 'styled-components'
 import Preloader from './components/Preloader';
 import Header from './components/Header';
+import ArticleView from './pages/ArticleView';
 
 const DivSeparate = styled.div`
   padding: 1rem 1rem 2rem 1rem;
@@ -44,6 +45,7 @@ const App = () => {
             <Profile />
             <Main />
           </DivSeparate>
+          <ArticleView />
       </div>}
     </div>
   );
