@@ -13,7 +13,7 @@ const PreloaderContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 98vh;
+  height: 90vh;
 `;
 
 const Loader = styled.div`
