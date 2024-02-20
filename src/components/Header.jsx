@@ -57,7 +57,8 @@ const Dropdown = styled.div`
     transform: translateX(-30%);
     width: 100%;
     padding: 1rem 2.4rem;
-    background-color: #eeeeee;
+    background-color: #fdfdfd;
+    border: 1px solid #9b9b9b;
     z-index: 1;
     animation: ${fadeIn} 0.3s ease-out;
     &::before {
@@ -79,6 +80,9 @@ const LanguageList = styled.ul`
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    li {
+        font-weight: 500;
+    }
 `;
 
 const SearchInput = styled.input`

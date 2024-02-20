@@ -20,7 +20,7 @@ const ArticleContainer = styled.div`
     img {
         max-width: 100%;
         width: 300px;
-        border-radius: 15px;
+        border-radius: 20px;
         @media (max-width: 754px) {
           max-width: 100%;
         }
