@@ -47,7 +47,7 @@ const Main = () => {
           imgalt={'VueJS x ReactJS x AngularJS'}
           titlearticle={'Qual melhor Framework após aprender JavaScript?'}
           descriptionarticle={'Explore os melhores frameworks pós-JavaScript: React, Angular, Vue.js, destacando características e orientando na escolha para aprimorar habilidades de desenvolvimento web.'}
-          linktoknowbetter={'#'}
+          linktoknowbetter={'reactxangularxvue'}
         />
         <Article
           imgproject={'styledcomponents.png'}

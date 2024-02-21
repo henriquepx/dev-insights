@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const showingArticle = keyframes`
   0% {
@@ -35,6 +36,10 @@ const LinkToKnowBetter = styled.a`
     color: #000;
     font-weight: 600;
     margin-top: .5rem;
+    text-decoration: none;
+    &:visited {
+      color: #000;
+    }
 `
 const TextArticle = styled.div`
     display: flex;
@@ -64,11 +69,11 @@ const Article = ({ imgproject, imgalt, titlearticle, descriptionarticle, linktok
         <TextArticle>
           <h2>{titlearticle}</h2>
           <DescriptionArticle>{descriptionarticle}</DescriptionArticle>
-          <LinkToKnowBetter href={linktoknowbetter}>Saiba mais »</LinkToKnowBetter>
+          <LinkToKnowBetter><Link to={linktoknowbetter}>Saiba mais »</Link ></LinkToKnowBetter>
         </TextArticle>
       </ArticleContainer>
-    );
-  };
+    )
+  }
   
   Article.propTypes = {
     imgproject: PropTypes.any.isRequired,

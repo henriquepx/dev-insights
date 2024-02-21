@@ -3,6 +3,8 @@ import styled, { keyframes } from 'styled-components';
 import { AiOutlineGlobal } from 'react-icons/ai';
 import { IoIosArrowDown } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
+import { Link } from 'react-router-dom';
+
 const HeaderContainer = styled.header`
     padding: 2rem 1rem 1rem 1rem;
     display: flex;
@@ -133,9 +135,8 @@ const Header = () => {
             <div>
                 <NavHeader>
                     <UlHeader>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Portfólio</a></li>
-
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="https://github.com/henriquepx">Portfólio</Link></li>
                         <ChangeLanguage ref={languageButtonRef} onClick={handleLanguageClick}>
                             <AiOutlineGlobal size={18} />
                             {isLanguageOpen && (

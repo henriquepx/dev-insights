@@ -1,12 +1,24 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const showingText = keyframes`
+  0% {
+        transform: translate3d(0, 5%, 0);
+        opacity: .2;
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+`;
 
 const ArticleViewContainer = styled.div`
-    margin: 10rem 0rem;
+    margin: 1.5rem 0rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    animation: ${showingText} 2s ease-in-out;
     h1 {
         text-align: center;
         color: #000;
@@ -15,12 +27,13 @@ const ArticleViewContainer = styled.div`
         max-width: 30ch;
     }
     p {
-        margin-bottom: 2.5rem;
+        margin-bottom: 1rem;
         font-size: .8rem;
     }
 `
 const ImgBg = styled.img`
   border-radius: 20px;
+  width: 65%;
 `
 const ImgRedes = styled.img`
   width: 35px;
