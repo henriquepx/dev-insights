@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -31,16 +32,17 @@ const ArticleContainer = styled.div`
     }
 `
 const LinkToKnowBetter = styled.a`
-    font-size: .7rem;
-    font-style: normal;
-    color: #000;
-    font-weight: 600;
-    margin-top: .5rem;
-    text-decoration: none;
-    &:visited {
-      color: #000;
-    }
-`
+  font-size: .7rem;
+  font-style: normal;
+  color: ${({ visited }) => (visited ? '#000000' : '#000')};
+  font-weight: 600;
+  margin-top: .5rem;
+  text-decoration: none;
+  cursor: pointer;
+  &:visited {
+    color: #000000;
+  }
+`;
 const TextArticle = styled.div`
     display: flex;
     justify-content: space-between;
@@ -63,13 +65,20 @@ const DescriptionArticle = styled.p`
 `
 
 const Article = ({ imgproject, imgalt, titlearticle, descriptionarticle, linktoknowbetter }) => {
-    return (
+  const [visited, setVisited] = useState(false);  
+  
+  return (
       <ArticleContainer>
         <img src={imgproject} alt={imgalt} />
         <TextArticle>
           <h2>{titlearticle}</h2>
           <DescriptionArticle>{descriptionarticle}</DescriptionArticle>
-          <LinkToKnowBetter><Link to={linktoknowbetter}>Saiba mais »</Link ></LinkToKnowBetter>
+          <LinkToKnowBetter
+            visited={visited}
+            onClick={() => setVisited(true)}
+          >
+          <Link to={linktoknowbetter}>Saiba mais »</Link>
+        </LinkToKnowBetter>
         </TextArticle>
       </ArticleContainer>
     )

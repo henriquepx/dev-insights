@@ -12,7 +12,7 @@ const showingText = keyframes`
 `;
 
 const ArticleViewContainer = styled.div`
-    margin: 1.5rem 0rem;
+    margin: 1.5rem 0rem 5rem 0rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,20 +20,26 @@ const ArticleViewContainer = styled.div`
     gap: 10px;
     animation: ${showingText} 2s ease-in-out;
     h1 {
-        text-align: center;
-        color: #000;
-        font-weight: 600;
-        font-size: 1.8rem;
-        max-width: 30ch;
+      text-align: center;
+      color: #000;
+      font-weight: 600;
+      font-size: 1.8rem;
+      max-width: 30ch;
+      @media (max-width: 1023px) {
+        font-size: 1rem;
+      }
     }
     p {
-        margin-bottom: 1rem;
-        font-size: .8rem;
+      margin-bottom: 1rem;
+      font-size: .8rem;
     }
 `
 const ImgBg = styled.img`
   border-radius: 20px;
   width: 65%;
+  @media (max-width: 1023px) {
+    width: 90%;
+  }
 `
 const ImgRedes = styled.img`
   width: 35px;
@@ -44,9 +50,12 @@ const DescriptionArticleView = styled.div`
   width: 100%;
   margin: 0 auto;
 
-  margin-top: 4rem;
+  margin-top: 1.5rem;
+  padding: 0 1rem;
 
   display: flex;
+  flex-direction: column;
+  gap: 50px;
 `
 const ShareArticle = styled.div`
   display: flex;
@@ -64,6 +73,9 @@ const TextsArticle = styled.div`
     max-width: 400ch;
     margin: 10px 0;
   }
+  @media (max-width: 1023px) {
+    margin: 20px 0;
+  }
 `
 
 const ArticleView = () => {
@@ -73,14 +85,6 @@ const ArticleView = () => {
       <p>20/02/2024</p>
       <ImgBg src="/angualrvuereact.png" alt="Wallpaper Angular x React x Vue" />
       <DescriptionArticleView>
-        <ShareArticle>
-          <p>Compartilhar artigo</p>
-          <div>
-            <a href="#"><ImgRedes src="/twitter.svg" alt="" /></a>
-            <a href="#"><ImgRedes src="/linkedin.svg" alt="" /></a>
-            <a href="#"><ImgRedes src="/instagram.svg" alt="" /></a>
-          </div>
-        </ShareArticle>
         <TextsArticle>
           <p>1. React: A Deusa da Reatividade</p>
           <p>React, desenvolvido pelo Facebook, é um framework que revolucionou a construção de interfaces de usuário. A base do React reside na ideia de componentização, onde a interface é quebrada em componentes reutilizáveis. O Virtual DOM, uma abstração leve do DOM real, otimiza as atualizações, resultando em desempenho excepcional em aplicações de larga escala.</p>
@@ -99,6 +103,14 @@ const ArticleView = () => {
           <p>Conclusão: Rumo à Excelência no Desenvolvimento Web e Desenvolvimento Front-end</p>
           <p>Em suma, a escolha entre React, Angular e Vue.js é uma decisão estratégica que moldará sua jornada no desenvolvimento web. Aprofundar-se em cada framework é mais do que uma simples escolha técnica; é uma oportunidade de crescimento, aprendizado e domínio. A documentação oficial, comunidades online e prática constante são seus aliados nesta jornada. Ao escolher e explorar um desses frameworks, você não apenas eleva suas habilidades de desenvolvimento, mas também se torna parte de uma comunidade vibrante e inovadora. Que sua jornada seja repleta de descobertas e conquistas extraordinárias!</p>
         </TextsArticle>
+        <ShareArticle>
+          <p>Compartilhar artigo</p>
+          <div>
+            <a href="#"><ImgRedes src="/twitter.svg" alt="" /></a>
+            <a href="#"><ImgRedes src="/linkedin.svg" alt="" /></a>
+            <a href="#"><ImgRedes src="/instagram.svg" alt="" /></a>
+          </div>
+        </ShareArticle>
       </DescriptionArticleView>
     </ArticleViewContainer>
   )
