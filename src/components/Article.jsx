@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -31,16 +30,21 @@ const ArticleContainer = styled.div`
       flex-direction: column;
     }
 `
-const LinkToKnowBetter = styled.a`
-  font-size: .7rem;
+const LinkToKnowBetter = styled.p`
+  font-size: 0.7rem;
   font-style: normal;
-  color: ${({ visited }) => (visited ? '#000000' : '#000')};
   font-weight: 600;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   text-decoration: none;
   cursor: pointer;
-  &:visited {
-    color: #000000;
+
+  a {
+    color: #000; // Defina a cor desejada para o link
+    text-decoration: none;
+
+    &:visited {
+      color: #000; // Defina a cor desejada para links visitados
+    }
   }
 `;
 const TextArticle = styled.div`
@@ -62,10 +66,13 @@ const TextArticle = styled.div`
 const DescriptionArticle = styled.p`
     font-size: .6rem;
     font-style: normal;
+    @media (max-width: 1024px) {
+      font-size: 1rem;
+      margin: 10px0;
+    }
 `
 
 const Article = ({ imgproject, imgalt, titlearticle, descriptionarticle, linktoknowbetter }) => {
-  const [visited, setVisited] = useState(false);  
   
   return (
       <ArticleContainer>
@@ -73,11 +80,7 @@ const Article = ({ imgproject, imgalt, titlearticle, descriptionarticle, linktok
         <TextArticle>
           <h2>{titlearticle}</h2>
           <DescriptionArticle>{descriptionarticle}</DescriptionArticle>
-          <LinkToKnowBetter
-            visited={visited}
-            onClick={() => setVisited(true)}
-          >
-          <Link to={linktoknowbetter}>Saiba mais »</Link>
+          <LinkToKnowBetter><Link to={linktoknowbetter}>Saiba mais »</Link>
         </LinkToKnowBetter>
         </TextArticle>
       </ArticleContainer>

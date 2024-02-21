@@ -24,6 +24,7 @@ const DescriptionAboutMe = styled.p`
     padding-bottom: .7rem;
     @media (max-width: 1023px) {
         max-width: 100%;
+        font-size: 1rem;
     }
 `
 const SocialMedias = styled.div`
