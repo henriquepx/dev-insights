@@ -3,14 +3,9 @@ import Article from './Article'
 
 const showingText = keyframes`
   0% {
-        transform: translate3d(20%, 0, 0);
         opacity: 0;
     }
-    50% {
-        opacity: .3;
-    }
     100% {
-      transform: translate3d(0, 0, 0);
       opacity: 1;
     }
 `;
@@ -21,7 +16,7 @@ const MainContainer = styled.div`
         font-weight: 700;
         font-family: 'Montserrat', sans-serif;
         margin: 2.5rem 0rem 1rem 1rem;
-        animation: ${showingText} 2s ease-in-out;
+        animation: ${showingText} 1.4s ease-in-out;
         @media (max-width: 630px) {
           font-size: 2rem;
           margin: 2.5rem 0rem 1rem 0rem;

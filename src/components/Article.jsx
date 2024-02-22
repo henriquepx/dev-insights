@@ -4,11 +4,9 @@ import { Link } from 'react-router-dom';
 
 const showingArticle = keyframes`
   0% {
-        transform: translate3d(20%, 0, 0);
-        opacity: .2;
+        opacity: 0;
     }
     100% {
-      transform: translate3d(0, 0, 0);
       opacity: 1;
     }
 `;
@@ -16,7 +14,7 @@ const showingArticle = keyframes`
 const ArticleContainer = styled.div`
     display: flex;
     gap: 20px;
-    animation: ${showingArticle} 2.2s ease-in-out;
+    animation: ${showingArticle} 1.4s ease-in-out;
     transition: .4s;
     img {
         max-width: 100%;
@@ -31,7 +29,7 @@ const ArticleContainer = styled.div`
     }
 `
 const LinkToKnowBetter = styled.p`
-  font-size: 0.7rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 600;
   margin-top: 0.5rem;
@@ -39,11 +37,11 @@ const LinkToKnowBetter = styled.p`
   cursor: pointer;
 
   a {
-    color: #000; // Defina a cor desejada para o link
+    color: #000; 
     text-decoration: none;
 
     &:visited {
-      color: #000; // Defina a cor desejada para links visitados
+      color: #000; 
     }
   }
 `;
@@ -52,7 +50,6 @@ const TextArticle = styled.div`
     justify-content: space-between;
     flex-direction: column;
     padding: .65rem 0rem;
-    cursor: pointer;
     h2 {
         font-size: 1.1rem;
         font-weight: 500;
@@ -80,8 +77,7 @@ const Article = ({ imgproject, imgalt, titlearticle, descriptionarticle, linktok
         <TextArticle>
           <h2>{titlearticle}</h2>
           <DescriptionArticle>{descriptionarticle}</DescriptionArticle>
-          <LinkToKnowBetter><Link to={linktoknowbetter}>Saiba mais »</Link>
-        </LinkToKnowBetter>
+          <LinkToKnowBetter><Link to={linktoknowbetter}>Saiba mais »</Link></LinkToKnowBetter>
         </TextArticle>
       </ArticleContainer>
     )

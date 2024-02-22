@@ -3,17 +3,15 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const showingText = keyframes`
   0% {
-        transform: translate3d(-20%, 0, 0);
-        opacity: .2;
+        opacity: 0;
     }
     100% {
-      transform: translate3d(0, 0, 0);
       opacity: 1;
     }
 `;
 
 const ProfileContainer = styled.div`
-    animation: ${showingText} 2s ease-in-out;   
+    animation: ${showingText} 1.4s ease-in-out;   
 `
 const DescriptionAboutMe = styled.p`
     font-family: 'Montserrat', sans-serif;

@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components';
 
 const showingText = keyframes`
   0% {
-        transform: translate3d(0, 5%, 0);
+        transform: translate3d(0, 3%, 0);
         opacity: .2;
     }
     100% {
@@ -18,7 +18,7 @@ const ArticleViewContainer = styled.div`
     justify-content: center;
     align-items: center;
     gap: 10px;
-    animation: ${showingText} 2s ease-in-out;
+    animation: ${showingText} .7s ease-in-out;
     h1 {
       text-align: center;
       color: #000;
