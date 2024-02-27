@@ -97,6 +97,9 @@ const MenuHamburger = styled.div`
   border-radius: 10px;
   z-index: 999;
   display: none;
+  @media (max-width: 640px) {
+        display: block;
+    }
   span {
     display: block;
     width: 25px;
@@ -112,9 +115,6 @@ const MenuHamburger = styled.div`
     }
     &:nth-child(3) {
       transform: translateY(${props => (props.open ? '-8px' : '0')}) rotate(${props => (props.open ? '-45deg' : '0')});
-    }
-    @media (max-width: 640px) {
-        display: block;
     }
   }
 `;
