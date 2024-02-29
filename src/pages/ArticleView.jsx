@@ -1,4 +1,6 @@
 import styled, { keyframes } from 'styled-components';
+import { Link } from 'react-router-dom';
+import BackToTop from '../components/BackToTop';
 
 const showingText = keyframes`
   0% {
@@ -12,19 +14,21 @@ const showingText = keyframes`
 `;
 
 const ArticleViewContainer = styled.div`
-    margin: 1.5rem 0rem 5rem 0rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    padding: 5rem 0rem 5rem 0rem;
+
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
     animation: ${showingText} .7s ease-in-out;
+    @media (max-width: 500px) {
+      padding-top: 2.5rem;
+    }
     h1 {
-      text-align: center;
       color: #000;
       font-weight: 600;
       font-size: 1.8rem;
-      max-width: 30ch;
       @media (max-width: 1023px) {
         font-size: 1rem;
       }
@@ -34,9 +38,12 @@ const ArticleViewContainer = styled.div`
       font-size: .8rem;
     }
 `
+const ArticleViewIntro = styled.div`
+
+`
 const ImgBg = styled.img`
   border-radius: 20px;
-  width: 65%;
+  width: 100%;
   @media (max-width: 1023px) {
     width: 90%;
   }
@@ -56,6 +63,7 @@ const DescriptionArticleView = styled.div`
   display: flex;
   flex-direction: column;
   gap: 50px;
+  text-align: left;
 `
 const ShareArticle = styled.div`
   display: flex;
@@ -78,11 +86,24 @@ const TextsArticle = styled.div`
   }
 `
 
+const LinkGoBack = styled(Link)`
+  font-size: .7rem;
+  color: #000;
+  font-weight: 600;
+  text-align: left; 
+  &:visited {
+    color: #000;
+  }
+`;
+
 const ArticleView = () => {
   return (
     <ArticleViewContainer>
-      <h1>Qual melhor Framework após aprender JavaScript?</h1>
-      <p>20/02/2024</p>
+      <ArticleViewIntro>
+        <LinkGoBack to={"/"}>&lt;   Voltar para Home</LinkGoBack>
+        <h1>Qual melhor Framework após aprender JavaScript?</h1>
+        <p>20/02/2024</p>
+      </ArticleViewIntro>
       <ImgBg src="/angualrvuereact.png" alt="Wallpaper Angular x React x Vue" />
       <DescriptionArticleView>
         <TextsArticle>
@@ -112,6 +133,7 @@ const ArticleView = () => {
           </div>
         </ShareArticle>
       </DescriptionArticleView>
+      <BackToTop />
     </ArticleViewContainer>
   )
 }

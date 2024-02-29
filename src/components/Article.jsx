@@ -16,18 +16,21 @@ const ArticleContainer = styled.div`
     gap: 20px;
     animation: ${showingArticle} 1.4s ease-in-out;
     transition: .4s;
-    img {
+    @media (max-width: 754px) {
+      flex-direction: column;
+    }
+`
+const LinkWrapper = styled(Link)`
+  transition: transform 0.3s ease-in-out;
+  img {
         max-width: 100%;
-        width: 300px;
+        width: 700px;
         border-radius: 20px;
         @media (max-width: 754px) {
           max-width: 100%;
         }
     }
-    @media (max-width: 754px) {
-      flex-direction: column;
-    }
-`
+`;
 const LinkToKnowBetter = styled.p`
   font-size: 1rem;
   font-style: normal;
@@ -73,7 +76,7 @@ const Article = ({ imgproject, imgalt, titlearticle, descriptionarticle, linktok
   
   return (
       <ArticleContainer>
-        <img src={imgproject} alt={imgalt} />
+        <LinkWrapper to={linktoknowbetter}><img src={imgproject} alt={imgalt} /></LinkWrapper>
         <TextArticle>
           <h2>{titlearticle}</h2>
           <DescriptionArticle>{descriptionarticle}</DescriptionArticle>
