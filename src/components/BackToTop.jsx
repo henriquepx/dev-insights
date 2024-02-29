@@ -7,7 +7,7 @@ const BackToTopButton = styled.button`
   bottom: 20px;
   right: 20px;
   cursor: pointer;
-  opacity: ${(props) => (props.show ? '1' : '0')};
+  opacity: ${({ show }) => (show === 'true' ? '1' : '0')};
   transition: opacity 0.3s ease-in-out;
   background-color: transparent;
 `;
@@ -38,8 +38,8 @@ const BackToTop = () => {
   }, []);
 
   return (
-    <BackToTopButton show={showButton} onClick={scrollToTop}>
-          <FaArrowAltCircleUp size={40} />
+    <BackToTopButton show={showButton.toString()} onClick={scrollToTop}>
+    <FaArrowAltCircleUp size={40} />
     </BackToTopButton>
   );
 };

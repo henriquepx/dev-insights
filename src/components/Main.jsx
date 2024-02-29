@@ -51,6 +51,13 @@ const Main = () => {
           descriptionarticle={'Explore a poderosa estilização em aplicações React com Styled Components. Aprenda CSS-IN-JS, aprimore suas habilidades e otimize o design web eficientemente.'}
           linktoknowbetter={'styledcomponents'}
         />
+        <Article
+          imgproject={'git.jpg'}
+          imgalt={'Git'}
+          titlearticle={'Git: Entenda os principais comandos.'}
+          descriptionarticle={'Aprofunde-se no mundo do controle de versão com Git: Uma análise detalhada dos principais comandos para aprimorar sua experiência de Desenvolvimento.'}
+          linktoknowbetter={'gittutorial'}
+        />
       </AllArticles>
     </MainContainer>
   )
