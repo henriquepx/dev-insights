@@ -49,7 +49,7 @@ const Main = () => {
           imgalt={'Styled Components'}
           titlearticle={'Aprenda CSS-IN-JS com Styled Components.'}
           descriptionarticle={'Explore a poderosa estilização em aplicações React com Styled Components. Aprenda CSS-IN-JS, aprimore suas habilidades e otimize o design web eficientemente.'}
-          linktoknowbetter={'#'}
+          linktoknowbetter={'styledcomponents'}
         />
       </AllArticles>
     </MainContainer>
