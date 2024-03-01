@@ -17,6 +17,7 @@ const ArticleContainer = styled.div`
     transition: .4s;
     @media (max-width: 754px) {
       flex-direction: column;
+      gap: 0px;
     }
 `
 const LinkWrapper = styled(Link)`
@@ -55,9 +56,6 @@ const TextArticle = styled.div`
     h2 {
         font-size: 1.1rem;
         font-weight: 500;
-    }
-    @media (max-width: 900px) {
-      padding: .7rem 0rem;
     }
 
 
