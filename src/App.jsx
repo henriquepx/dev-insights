@@ -35,7 +35,6 @@ const article1 = {
     'Em suma, a escolha entre React, Angular e Vue.js é uma decisão estratégica que moldará sua jornada no desenvolvimento web. Aprofundar-se em cada framework é mais do que uma simples escolha técnica; é uma oportunidade de crescimento, aprendizado e domínio. A documentação oficial, comunidades online e prática constante são seus aliados nesta jornada. Ao escolher e explorar um desses frameworks, você não apenas eleva suas habilidades de desenvolvimento, mas também se torna parte de uma comunidade vibrante e inovadora. Que sua jornada seja repleta de descobertas e conquistas extraordinárias!'
   ],
 };
-
 const article2 = {
   id: 'styledcomponents',
   title: 'Aprenda CSS-IN-JS com Styled Components.',
@@ -98,8 +97,6 @@ const article2 = {
     'Esteja preparado para explorar um novo mundo de possibilidades estilísticas enquanto eleva a qualidade e a legibilidade do seu código. Que sua jornada em Styled Components seja tão empolgante quanto os resultados visuais incríveis que você está prestes a conquistar! 🚀✨',
   ],
 };
-
-
 const article3 = {
   id: 'gittutorial',
   title: 'Git: Entenda os principais comandos.',

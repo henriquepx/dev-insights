@@ -10,7 +10,7 @@ const BackToTopButton = styled.button`
   opacity: ${({ show }) => (show === 'true' ? '1' : '0')};
   transition: opacity 0.3s ease-in-out;
   background-color: transparent;
-`;
+`
 
 const BackToTop = () => {
   const [showButton, setShowButton] = useState(false);

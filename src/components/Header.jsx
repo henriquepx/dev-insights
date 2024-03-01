@@ -14,11 +14,11 @@ const HeaderContainer = styled.header`
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-`;
+`
 const TitleHeader = styled.h1`
     color: #000;
     font-weight: 500;
-`;
+`
 const UlHeader = styled.ul`
     display: flex;
     align-items: center;
@@ -33,23 +33,22 @@ const UlHeader = styled.ul`
     @media (max-width: 640px) {
         display: none;
     }
-`;
+`
 const NavHeader = styled.nav`
     display: flex;
     align-items: center;
-`;
+`
 const ChangeLanguage = styled.li`
     display: flex;
     align-items: center;
     gap: 3px;
     cursor: pointer;
     position: relative;
-`;
-
+`
 const LanguageToggle = styled.div`
     display: flex;
     align-items: center;
-`;
+`
 const fadeIn = keyframes`
     from {
         opacity: 0;
@@ -57,7 +56,7 @@ const fadeIn = keyframes`
     to {
         opacity: 1;
     }
-`;
+`
 const Dropdown = styled.div`
     position: absolute;
     top: 32px;
@@ -83,7 +82,7 @@ const Dropdown = styled.div`
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
     }
-`;
+`
 const LanguageList = styled.ul`
     display: flex;
     flex-direction: column;
@@ -92,13 +91,13 @@ const LanguageList = styled.ul`
     li {
         font-weight: 500;
     }
-`;
+`
 const SearchInput = styled.input`
     padding: 3px;
     border: 1px solid #ccc;
     border-radius: 3px;
     animation: ${fadeIn} 0.3s ease-out;
-`;
+`
 const MenuHamburger = styled.div`
   cursor: pointer;
   padding: 3px 5px 0px 5px;
@@ -125,13 +124,13 @@ const MenuHamburger = styled.div`
       transform: translateY(${props => (props.open ? '-8px' : '0')}) rotate(${props => (props.open ? '-45deg' : '0')});
     }
   }
-`;
+`
 
 const Header = () => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isLanguageOpen, setIsLanguageOpen] = useState(false);
     const [isHamburgerMenuOpen, setHamburgerMenuOpen] = useState(false);
-    const [isMobileMenuOpen, setMobileMenuOpen] = useState(false); // Novo estado
+    const [isMobileMenuOpen, setMobileMenuOpen] = useState(false); 
 
     const searchInputRef = useRef(null);
     const languageButtonRef = useRef(null);
@@ -140,14 +139,14 @@ const Header = () => {
         setIsSearchOpen(!isSearchOpen);
         setIsLanguageOpen(false);
         setHamburgerMenuOpen(false);
-        setMobileMenuOpen(false); // Fechar o menu móvel ao abrir a pesquisa
+        setMobileMenuOpen(false);
     };
 
     const handleLanguageClick = () => {
         setIsLanguageOpen(!isLanguageOpen);
         setIsSearchOpen(false);
         setHamburgerMenuOpen(false);
-        setMobileMenuOpen(false); // Fechar o menu móvel ao abrir a seleção de idioma
+        setMobileMenuOpen(false); 
     };
 
     const handleSearchOutsideClick = useCallback((e) => {
@@ -164,7 +163,7 @@ const Header = () => {
 
     const handleHamburgerClick = () => {
         setHamburgerMenuOpen(!isHamburgerMenuOpen);
-        setMobileMenuOpen(!isMobileMenuOpen); // Abrir ou fechar o menu móvel ao clicar no ícone do hamburger
+        setMobileMenuOpen(!isMobileMenuOpen); 
     };
 
     useEffect(() => {

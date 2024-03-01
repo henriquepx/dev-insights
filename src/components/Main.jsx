@@ -8,8 +8,7 @@ const showingText = keyframes`
     100% {
       opacity: 1;
     }
-`;
-
+`
 const MainContainer = styled.div`
     h1 {
         font-size: 4rem;

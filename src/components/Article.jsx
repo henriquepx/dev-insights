@@ -9,8 +9,7 @@ const showingArticle = keyframes`
     100% {
       opacity: 1;
     }
-`;
-
+`
 const ArticleContainer = styled.div`
     display: flex;
     gap: 20px;
@@ -30,7 +29,7 @@ const LinkWrapper = styled(Link)`
           max-width: 100%;
         }
     }
-`;
+`
 const LinkToKnowBetter = styled.p`
   font-size: 1rem;
   font-style: normal;
@@ -47,7 +46,7 @@ const LinkToKnowBetter = styled.p`
       color: #000; 
     }
   }
-`;
+`
 const TextArticle = styled.div`
     display: flex;
     justify-content: space-between;

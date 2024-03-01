@@ -8,8 +8,7 @@ const showingText = keyframes`
     100% {
       opacity: 1;
     }
-`;
-
+`
 const ProfileContainer = styled.div`
     animation: ${showingText} 1.4s ease-in-out;   
 `

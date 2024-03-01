@@ -13,11 +13,8 @@ const GlobalStyles = createGlobalStyle`
     list-style: none;
     text-decoration: none;
     line-height: 1.5;
-  }   
-
-  body {
     font-family: 'Montserrat', sans-serif;
-  }
+  }   
 `;
 
 export default GlobalStyles;

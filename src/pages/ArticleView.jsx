@@ -12,8 +12,7 @@ const showingText = keyframes`
       transform: translate3d(0, 0, 0);
       opacity: 1;
     }
-`;
-
+`
 const ArticleViewContainer = styled.div`
     padding: 5rem 0rem 5rem 0rem;
 
@@ -86,7 +85,6 @@ const TextsArticle = styled.div`
     margin: 20px 0;
   }
 `
-
 const LinkGoBack = styled(Link)`
   font-size: .7rem;
   color: #000;
@@ -94,7 +92,7 @@ const LinkGoBack = styled(Link)`
   &:visited {
     color: #000;
   }
-`;
+`
 
 const ArticleView = ({ title, date, image, content }) => {
   return (

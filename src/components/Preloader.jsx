@@ -7,15 +7,13 @@ const spin = keyframes`
   100% {
     transform: rotate(360deg);
   }
-`;
-
+`
 const PreloaderContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 90vh;
-`;
-
+`
 const Loader = styled.div`
   display: block;
   width: 50px; 
@@ -49,7 +47,7 @@ const Loader = styled.div`
     bottom: 15px;
     border-top-color: #333333;
   }
-`;
+`
 
 const Preloader = () => {
   return (

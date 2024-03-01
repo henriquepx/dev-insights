@@ -132,14 +132,11 @@ const ChangingLanguageMobile = styled.div`
 const MenuMobileContent = ({ setMobileMenuOpen }) => {
 
     useEffect(() => {
-        // Adiciona a classe ao corpo quando o componente é montado
         document.body.style.overflow = 'hidden';
-
-        // Remove a classe quando o componente é desmontado
         return () => {
             document.body.style.overflow = 'auto';
         };
-    }, []); // Executa isso apenas uma vez ao montar o componente
+    }, []); 
 
     const handleCloseMenu = () => {
         setMobileMenuOpen(false);
