@@ -1,11 +1,12 @@
 import styled from 'styled-components'
+import { useEffect } from 'react';
 import { FaGooglePlus, FaLinkedin, FaGithub, FaWhatsapp, FaInstagram } from 'react-icons/fa'
 import { IoIosArrowForward } from "react-icons/io";
 import PropTypes from 'prop-types';
 
 const ContainerMobileContent = styled.div`
     background-color: #f8f8f8;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     position: fixed;
     right: 0;
@@ -129,6 +130,16 @@ const ChangingLanguageMobile = styled.div`
 `
 
 const MenuMobileContent = ({ setMobileMenuOpen }) => {
+
+    useEffect(() => {
+        // Adiciona a classe ao corpo quando o componente é montado
+        document.body.style.overflow = 'hidden';
+
+        // Remove a classe quando o componente é desmontado
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, []); // Executa isso apenas uma vez ao montar o componente
 
     const handleCloseMenu = () => {
         setMobileMenuOpen(false);
