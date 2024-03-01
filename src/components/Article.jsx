@@ -10,11 +10,52 @@ const showingArticle = keyframes`
       opacity: 1;
     }
 `
+const LinkToKnowBetter = styled.p`
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  &::after {
+    display: inline-block;
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+    transition: transform 0.3s, opacity 0.2s;
+  }
+  &:after {
+    margin-left: 0px;
+    content: '»';
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+
+
+  a {
+    color: #000; 
+    text-decoration: none;
+
+    &:visited {
+      color: #000; 
+    }
+  }
+`
 const ArticleContainer = styled.div`
     display: flex;
     gap: 20px;
     animation: ${showingArticle} 1.4s ease-in-out;
     transition: .4s;
+    &:hover {
+      ${LinkToKnowBetter}::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    }
     @media (max-width: 754px) {
       flex-direction: column;
       gap: 0px;
@@ -31,28 +72,11 @@ const LinkWrapper = styled(Link)`
         }
     }
 `
-const LinkToKnowBetter = styled.p`
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 600;
-  margin-top: 0.5rem;
-  text-decoration: none;
-  cursor: pointer;
-
-  a {
-    color: #000; 
-    text-decoration: none;
-
-    &:visited {
-      color: #000; 
-    }
-  }
-`
 const TextArticle = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding: .65rem 0rem;
+    padding: 1rem 0rem;
     h2 {
         font-size: 1.1rem;
         font-weight: 500;
@@ -61,12 +85,7 @@ const TextArticle = styled.div`
 
 `
 const DescriptionArticle = styled.p`
-    font-size: .6rem;
-    font-style: normal;
-    @media (max-width: 1024px) {
-      font-size: 1rem;
-      margin: 10px0;
-    }
+    font-size: 1rem;
 `
 
 const Article = ({ imgproject, imgalt, titlearticle, descriptionarticle, linktoknowbetter }) => {
@@ -77,7 +96,7 @@ const Article = ({ imgproject, imgalt, titlearticle, descriptionarticle, linktok
         <TextArticle>
           <h2>{titlearticle}</h2>
           <DescriptionArticle>{descriptionarticle}</DescriptionArticle>
-          <LinkToKnowBetter><Link to={linktoknowbetter}>Saiba mais »</Link></LinkToKnowBetter>
+        <LinkToKnowBetter><Link to={linktoknowbetter}>Saiba mais</Link></LinkToKnowBetter>
         </TextArticle>
       </ArticleContainer>
     )

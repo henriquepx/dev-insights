@@ -9,15 +9,16 @@ import MenuMobileContent from './MenuMobileContent';
 const HeaderContainer = styled.header`
     padding: 2rem 1rem 1rem 1rem;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     gap: 50px;
-    max-width: 1200px;
+    max-width: 1300px;
     width: 100%;
     margin: 0 auto;
 `
 const TitleHeader = styled.h1`
     color: #000;
-    font-weight: 500;
+    font-weight: 600;
 `
 const UlHeader = styled.ul`
     display: flex;

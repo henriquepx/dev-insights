@@ -7,7 +7,7 @@ const ContainerSobreMim = styled.div`
   display: flex;
   gap: 50px;
 
-  max-width: 1200px;
+  max-width: 1300px;
   width: 100%;
   margin: 0 auto;
   @media (max-width: 1023px) {

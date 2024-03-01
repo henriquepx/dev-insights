@@ -14,7 +14,6 @@ const ProfileContainer = styled.div`
 `
 const DescriptionAboutMe = styled.p`
     font-family: 'Montserrat', sans-serif;
-    font-size: .6rem;
     max-width: 29ch;
 
     border-bottom: 1px solid #dfdfdf;
@@ -39,7 +38,7 @@ const SocialMedias = styled.div`
                 margin: 10px 0;
                 max-width: 300px;
                 a {
-                    font-size: .8rem;
+                    font-size: 1rem;
                     color: #000;
                     font-weight: 500;
                 }
