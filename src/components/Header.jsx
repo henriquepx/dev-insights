@@ -1,9 +1,10 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { AiOutlineGlobal } from 'react-icons/ai';
 import { IoIosArrowDown } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 import { Link } from 'react-router-dom';
+import MenuMobileContent from './MenuMobileContent';
 
 const HeaderContainer = styled.header`
     padding: 2rem 1rem 1rem 1rem;
@@ -44,6 +45,11 @@ const ChangeLanguage = styled.li`
     cursor: pointer;
     position: relative;
 `;
+
+const LanguageToggle = styled.div`
+    display: flex;
+    align-items: center;
+`;
 const fadeIn = keyframes`
     from {
         opacity: 0;
@@ -59,19 +65,21 @@ const Dropdown = styled.div`
     transform: translateX(-30%);
     width: 100%;
     padding: 1rem 2.4rem;
-    background-color: #fdfdfd;
-    border: 1px solid #9b9b9b;
+    background-color: #fff;  
+    border: 1px solid #ddd;  
     z-index: 1;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);  
     animation: ${fadeIn} 0.3s ease-out;
+
     &::before {
         content: '';
         display: block;
         position: absolute;
         top: -10px;
-        left:  30%;
+        left: 30%;
         width: 0px;
         height: 0px;
-        border-bottom: 10px solid #eeeeee;
+        border-bottom: 10px solid #fff; 
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
     }
@@ -95,7 +103,7 @@ const MenuHamburger = styled.div`
   cursor: pointer;
   padding: 3px 5px 0px 5px;
   border-radius: 10px;
-  z-index: 999;
+  z-index: 10;
   display: none;
   @media (max-width: 640px) {
         display: block;
@@ -122,37 +130,52 @@ const MenuHamburger = styled.div`
 const Header = () => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+    const [isHamburgerMenuOpen, setHamburgerMenuOpen] = useState(false);
+    const [isMobileMenuOpen, setMobileMenuOpen] = useState(false); // Novo estado
+
     const searchInputRef = useRef(null);
     const languageButtonRef = useRef(null);
 
     const handleSearchClick = () => {
         setIsSearchOpen(!isSearchOpen);
-        setIsLanguageOpen(false); 
+        setIsLanguageOpen(false);
+        setHamburgerMenuOpen(false);
+        setMobileMenuOpen(false); // Fechar o menu móvel ao abrir a pesquisa
     };
 
     const handleLanguageClick = () => {
         setIsLanguageOpen(!isLanguageOpen);
-        setIsSearchOpen(false); 
+        setIsSearchOpen(false);
+        setHamburgerMenuOpen(false);
+        setMobileMenuOpen(false); // Fechar o menu móvel ao abrir a seleção de idioma
     };
 
-    const handleOutsideClick = (e) => {
-        if (
-            searchInputRef.current &&
-            !searchInputRef.current.contains(e.target) &&
-            languageButtonRef.current &&
-            !languageButtonRef.current.contains(e.target)
-        ) {
+    const handleSearchOutsideClick = useCallback((e) => {
+        if (searchInputRef.current && !searchInputRef.current.contains(e.target)) {
             setIsSearchOpen(false);
+        }
+    }, [setIsSearchOpen, searchInputRef]);
+
+    const handleLanguageOutsideClick = useCallback((e) => {
+        if (languageButtonRef.current && !languageButtonRef.current.contains(e.target)) {
             setIsLanguageOpen(false);
         }
+    }, [setIsLanguageOpen, languageButtonRef]);
+
+    const handleHamburgerClick = () => {
+        setHamburgerMenuOpen(!isHamburgerMenuOpen);
+        setMobileMenuOpen(!isMobileMenuOpen); // Abrir ou fechar o menu móvel ao clicar no ícone do hamburger
     };
 
     useEffect(() => {
-        document.addEventListener('mousedown', handleOutsideClick);
+        document.addEventListener('mousedown', handleSearchOutsideClick);
+        document.addEventListener('mousedown', handleLanguageOutsideClick);
+
         return () => {
-            document.removeEventListener('mousedown', handleOutsideClick);
+            document.removeEventListener('mousedown', handleSearchOutsideClick);
+            document.removeEventListener('mousedown', handleLanguageOutsideClick);
         };
-    }, []);
+    }, [handleSearchOutsideClick, handleLanguageOutsideClick]);
 
     return (
         <HeaderContainer>
@@ -162,8 +185,11 @@ const Header = () => {
                     <UlHeader>
                         <li><Link to="/">Home</Link></li>
                         <li><a href="https://github.com/henriquepx" target="_blank" rel="noopener noreferrer">Portfólio</a></li>
-                        <ChangeLanguage ref={languageButtonRef} onClick={handleLanguageClick}>
-                            <AiOutlineGlobal size={18} />
+                        <ChangeLanguage ref={languageButtonRef}>
+                            <LanguageToggle onClick={handleLanguageClick}>
+                                <AiOutlineGlobal size={18} />
+                                <IoIosArrowDown size={18} />
+                            </LanguageToggle>
                             {isLanguageOpen && (
                                 <Dropdown>
                                     <LanguageList>
@@ -173,7 +199,6 @@ const Header = () => {
                                     </LanguageList>
                                 </Dropdown>
                             )}
-                            <IoIosArrowDown size={18} onClick={handleLanguageClick} />
                         </ChangeLanguage>
 
                         {isSearchOpen ? (
@@ -186,11 +211,12 @@ const Header = () => {
                             <IoSearch size={18} onClick={handleSearchClick} />
                         )}
                     </UlHeader>
-                    <MenuHamburger>
+                    <MenuHamburger onClick={handleHamburgerClick}>
                         <span></span>
                         <span></span>
                         <span></span>
                     </MenuHamburger>
+                    {isMobileMenuOpen && <MenuMobileContent setMobileMenuOpen={setMobileMenuOpen} />}
                 </NavHeader>
             </div>
         </HeaderContainer>
