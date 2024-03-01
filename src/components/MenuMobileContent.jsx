@@ -19,6 +19,7 @@ const ContainerMobileContent = styled.div`
 const ContainerHeaderMobileContent = styled.div`
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
 `
 const ContainerLinksMobileContent = styled.div`
@@ -56,8 +57,8 @@ const ClosingMenu = styled.div`
 const ContainerMainMobileContent = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 100px;
-    padding: 3rem 2rem;
+    gap: 50px;
+    padding: 2.45rem 1.3rem;
 `
 const ContainerFooterMobileContent = styled.div`
     position: absolute;
