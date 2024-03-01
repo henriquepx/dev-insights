@@ -9,7 +9,7 @@ const BackToTopButton = styled.button`
   cursor: pointer;
   opacity: ${({ show }) => (show === 'true' ? '1' : '0')};
   transition: opacity 0.3s ease-in-out;
-  background-color: transparent;
+  background-color: #fff;
 `
 
 const BackToTop = () => {

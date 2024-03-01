@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
 
 const showingArticle = keyframes`
   0% {
@@ -90,13 +91,15 @@ const DescriptionArticle = styled.p`
 
 const Article = ({ imgproject, imgalt, titlearticle, descriptionarticle, linktoknowbetter }) => {
   
+  const { t } = useTranslation();
+
   return (
       <ArticleContainer>
         <LinkWrapper to={linktoknowbetter}><img src={imgproject} alt={imgalt} /></LinkWrapper>
         <TextArticle>
           <h2>{titlearticle}</h2>
           <DescriptionArticle>{descriptionarticle}</DescriptionArticle>
-        <LinkToKnowBetter><Link to={linktoknowbetter}>Saiba mais</Link></LinkToKnowBetter>
+        <LinkToKnowBetter><Link to={linktoknowbetter}>{t('article.linkToKnowBetter')}</Link></LinkToKnowBetter>
         </TextArticle>
       </ArticleContainer>
     )

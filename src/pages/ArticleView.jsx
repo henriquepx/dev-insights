@@ -2,6 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import BackToTop from '../components/BackToTop';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 const showingText = keyframes`
   0% {
@@ -94,23 +95,28 @@ const LinkGoBack = styled(Link)`
   }
 `
 
-const ArticleView = ({ title, date, image, content }) => {
+const ArticleView = ({ title, date, image, content, projectId }) => {
+  const { t } = useTranslation();
+  const translatedTitle = t(`projects.${projectId}.title`);
+
+  const translatedContent = content.map((paragraph, index) => t(`projects.${projectId}.content.${index}`));
+
   return (
     <ArticleViewContainer>
       <ArticleViewIntro>
         <LinkGoBack to="/">{'< Voltar para Home'}</LinkGoBack>
-        <h1>{title}</h1>
+        <h1>{translatedTitle}</h1>
         <p>{date}</p>
       </ArticleViewIntro>
       <ImgBg src={image} alt={`Wallpaper ${title}`} />
       <DescriptionArticleView>
         <TextsArticle>
-          {content.map((paragraph, index) => (
+          {translatedContent.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
         </TextsArticle>
         <ShareArticle>
-          <p>Compartilhar artigo</p>
+          <p>{t('viewarticle.shareArticle')}</p>
           <div>
             <a href="#"><ImgRedes src="/twitter.svg" alt="" /></a>
             <a href="#"><ImgRedes src="/linkedin.svg" alt="" /></a>
@@ -127,7 +133,8 @@ ArticleView.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  content: PropTypes.arrayOf(PropTypes.string).isRequired,
+  projectId: PropTypes.string.isRequired,
+  content: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default ArticleView

@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import Article from './Article'
+import { useTranslation } from "react-i18next";
 
 const showingText = keyframes`
   0% {
@@ -32,29 +33,32 @@ const AllArticles = styled.div`
 `
 
 const Main = () => {
+
+  const { t } = useTranslation();
+
   return (
       <MainContainer>
-      <h1>Todos os meus Artigos</h1>
+      <h1>{t('main.title')}</h1>
       <AllArticles>
         <Article
           imgproject={'bg1.jpg'}
           imgalt={'VueJS x ReactJS x AngularJS'}
-          titlearticle={'Qual melhor Framework após aprender JavaScript?'}
-          descriptionarticle={'Explore os melhores frameworks pós-JavaScript: React, Angular, Vue.js, destacando características e orientando na escolha para aprimorar habilidades de desenvolvimento web.'}
+          titlearticle={t('main.mainTitleProject1')}
+          descriptionarticle={t('main.mainDescriptionProject1')}
           linktoknowbetter={'reactxangularxvue'}
         />
         <Article
           imgproject={'styledcomponents.png'}
           imgalt={'Styled Components'}
-          titlearticle={'Aprenda CSS-IN-JS com Styled Components.'}
-          descriptionarticle={'Explore a poderosa estilização em aplicações React com Styled Components. Aprenda CSS-IN-JS, aprimore suas habilidades e otimize o design web eficientemente.'}
+          titlearticle={t('main.mainTitleProject2')}
+          descriptionarticle={t('main.mainDescriptionProject2')}
           linktoknowbetter={'styledcomponents'}
         />
         <Article
           imgproject={'git.jpg'}
           imgalt={'Git'}
-          titlearticle={'Git: Entenda os principais comandos.'}
-          descriptionarticle={'Aprofunde-se no mundo do controle de versão com Git: Uma análise detalhada dos principais comandos para aprimorar sua experiência de Desenvolvimento.'}
+          titlearticle={t('main.mainTitleProject3')}
+          descriptionarticle={t('main.mainDescriptionProject3')}
           linktoknowbetter={'gittutorial'}
         />
       </AllArticles>

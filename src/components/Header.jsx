@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import styled, { keyframes } from 'styled-components';
+import { useTranslation } from "react-i18next";
 import { AiOutlineGlobal } from 'react-icons/ai';
 import { IoIosArrowDown } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
@@ -128,6 +129,19 @@ const MenuHamburger = styled.div`
 `
 
 const Header = () => {
+
+    const { t, i18n } = useTranslation();
+
+    const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
+
+    const handleChangeLanguage = (newLanguage) => {
+        if (newLanguage !== currentLanguage) {
+            i18n.changeLanguage(newLanguage);
+            setCurrentLanguage(newLanguage);
+            localStorage.setItem("newLanguage", newLanguage);
+        }
+    };
+
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isLanguageOpen, setIsLanguageOpen] = useState(false);
     const [isHamburgerMenuOpen, setHamburgerMenuOpen] = useState(false);
@@ -183,8 +197,8 @@ const Header = () => {
             <div>
                 <NavHeader>
                     <UlHeader>
-                        <li><Link to="/">Home</Link></li>
-                        <li><a href="https://github.com/henriquepx" target="_blank" rel="noopener noreferrer">Portfólio</a></li>
+                        <li><Link to="/">{t('header.start')}</Link></li>
+                        <li><a href="https://github.com/henriquepx" target="_blank" rel="noopener noreferrer">{t('header.portfolio')}</a></li>
                         <ChangeLanguage ref={languageButtonRef}>
                             <LanguageToggle onClick={handleLanguageClick}>
                                 <AiOutlineGlobal size={18} />
@@ -193,9 +207,8 @@ const Header = () => {
                             {isLanguageOpen && (
                                 <Dropdown>
                                     <LanguageList>
-                                        <li>PT</li>
-                                        <li>EN</li>
-                                        <li>ES</li>
+                                        <li><a onClick={() => handleChangeLanguage('pt')} href="#">PT</a></li>
+                                        <li><a onClick={() => handleChangeLanguage('en')} href="#">EN</a></li>
                                     </LanguageList>
                                 </Dropdown>
                             )}

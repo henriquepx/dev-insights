@@ -151,8 +151,7 @@ const MenuMobileContent = ({ setMobileMenuOpen }) => {
             <ContainerHeaderMobileContent>
                 <ChangingLanguageMobile>
                     <p>PT</p>
-                    <p>EN</p>
-                    <p>ES</p>
+                      <p>EN</p>
                 </ChangingLanguageMobile>
                 <ClosingMenu onClick={handleCloseMenu}>
                     <span></span>

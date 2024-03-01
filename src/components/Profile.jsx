@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { useTranslation } from "react-i18next";
 
 const showingText = keyframes`
   0% {
@@ -48,9 +49,11 @@ const SocialMedias = styled.div`
 `
 
 const Profile = () => {
+    const { t } = useTranslation();
+
   return (
       <ProfileContainer>
-          <DescriptionAboutMe>Bem-vindo aos meus artigos de programação! Encontre ensinamentos, dicas, componentes para estudo, erros e mais.</DescriptionAboutMe>
+          <DescriptionAboutMe>{t('profile.description')}</DescriptionAboutMe>
           <SocialMedias>
             <nav>
                 <ul>
