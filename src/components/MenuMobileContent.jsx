@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import { useEffect } from 'react';
-import { FaGooglePlus, FaLinkedin, FaGithub, FaWhatsapp, FaInstagram } from 'react-icons/fa'
+import { FaGoogle, FaLinkedin, FaGithub, FaWhatsapp, FaInstagram } from 'react-icons/fa'
 import { IoIosArrowForward } from "react-icons/io";
 import PropTypes from 'prop-types';
+import { useTranslation } from "react-i18next";
 
 const ContainerMobileContent = styled.div`
     background-color: #f8f8f8;
@@ -130,7 +131,9 @@ const ChangingLanguageMobile = styled.div`
     }
 `
 
-const MenuMobileContent = ({ setMobileMenuOpen }) => {
+const MenuMobileContent = ({ setMobileMenuOpen, handleChangeLanguage }) => {
+
+    const { t } = useTranslation();
 
     useEffect(() => {
         document.body.style.overflow = 'hidden';
@@ -150,8 +153,8 @@ const MenuMobileContent = ({ setMobileMenuOpen }) => {
         <ContainerMainMobileContent>
             <ContainerHeaderMobileContent>
                 <ChangingLanguageMobile>
-                    <p>PT</p>
-                      <p>EN</p>
+                      <li><a onClick={() => handleChangeLanguage('pt')} href="#">PT</a></li>
+                      <li><a onClick={() => handleChangeLanguage('en')} href="#">EN</a></li>
                 </ChangingLanguageMobile>
                 <ClosingMenu onClick={handleCloseMenu}>
                     <span></span>
@@ -163,21 +166,21 @@ const MenuMobileContent = ({ setMobileMenuOpen }) => {
                 <ul>
                       <li>
                           <a href="#">
-                              Home
+                              {t('menumobile.home')}
                               <IoIosArrowForward size={22} />
                           </a>
                           
                       </li>
                       <li>
                           <a href="#">
-                                Portfólio
+                              {t('menumobile.portfolio')}
                                 <IoIosArrowForward size={22} />
                           </a>
                           
                       </li>
                       <li>
-                          <a href="#">
-                              Contact
+                          <a href="https://www.linkedin.com/in/henriquepinheiroxavier/" target='_blank' rel='noreferrer'>
+                              {t('menumobile.contact')}
                               <IoIosArrowForward size={22} />
                           </a>
                           
@@ -190,11 +193,11 @@ const MenuMobileContent = ({ setMobileMenuOpen }) => {
             <p>@2024 Henrique. Todos os direitos reservados. Desenvolvido em ReactJS & Styled-Components.</p>
             <div>
                 <ul>
-                    <li><a href="https://www.facebook.com/"><FaLinkedin /></a></li>
-                    <li><a href="https://twitter.com/"><FaGooglePlus /></a></li>
-                    <li><a href="https://plus.google.com/"><FaGithub /></a></li>
-                    <li><a href="https://www.linkedin.com/"><FaWhatsapp /></a></li>
-                    <li><a href="https://www.instagram.com/"><FaInstagram /></a></li>
+                      <li><a href="https://www.linkedin.com/in/henriquepinheiroxavier/" target='_blank' rel='noreferrer'><FaLinkedin /></a></li>
+                      <li><a href="mailto:henriquepinheiroxavier@gmail.com" target='_blank' rel='noreferrer'><FaGoogle /></a></li>
+                      <li><a href="https://github.com/henriquepx" target='_blank' rel='noreferrer'><FaGithub /></a></li>
+                      <li><a href="https://api.whatsapp.com/send?phone=5521964823939&text=Ol%C3%A1,%20Henrique.%20Tenho%20uma%20ideia%20de%20trabalho%20e%20voc%C3%AA%20%C3%A9%20o%20Desenvolvedor%20que%20eu%20preciso!" target='_blank' rel='noreferrer'><FaWhatsapp /></a></li>
+                      <li><a href="https://www.instagram.com/henriquepxx/" target='_blank' rel='noreferrer'><FaInstagram /></a></li>
                 </ul>
             </div>
         </ContainerFooterMobileContent>
@@ -205,6 +208,7 @@ const MenuMobileContent = ({ setMobileMenuOpen }) => {
 
 MenuMobileContent.propTypes = {
     setMobileMenuOpen: PropTypes.func.isRequired,
+    handleChangeLanguage: PropTypes.func.isRequired
 };
 
 

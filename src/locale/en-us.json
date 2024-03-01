@@ -113,5 +113,10 @@
                 "By internalizing the knowledge provided by this guide and incorporating the top Git commands, you will be prepared to face the challenges of collaborative development, exploring all the potentialities offered by this powerful tool. Don't just learn commands; absorb concepts and strategies that elevate your proficiency in using Git. May your journey in this vast version control ecosystem be filled with discoveries and extraordinary achievements! 🚀🔗"
             ]
         }
+    },
+    "menumobile": {
+        "home": "Home",
+        "portfolio": "Portfolio",
+        "contact": "Contact"
     }
 }

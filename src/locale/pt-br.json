@@ -113,5 +113,10 @@
                 "Ao internalizar os conhecimentos proporcionados por este guia e incorporar os principais comandos do Git, você estará preparado para enfrentar os desafios do desenvolvimento colaborativo, explorando todas as potencialidades oferecidas por essa poderosa ferramenta. Não apenas aprenda comandos; absorva conceitos e estratégias que elevam sua proficiência no uso do Git. Que sua jornada neste vasto ecossistema de controle de versão seja repleta de descobertas e conquistas extraordinárias! 🚀🔗"
             ]
         }
+    },
+    "menumobile": {
+        "home": "Inicio",
+        "portfolio": "Portfólio",
+        "contact": "Contato"
     }
 }

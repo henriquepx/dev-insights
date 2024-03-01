@@ -229,7 +229,7 @@ const Header = () => {
                         <span></span>
                         <span></span>
                     </MenuHamburger>
-                    {isMobileMenuOpen && <MenuMobileContent setMobileMenuOpen={setMobileMenuOpen} />}
+                    <MenuMobileContent setMobileMenuOpen={setMobileMenuOpen} handleChangeLanguage={handleChangeLanguage} />
                 </NavHeader>
             </div>
         </HeaderContainer>
