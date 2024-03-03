@@ -125,25 +125,34 @@ const ContainerFooterMobileContent = styled.div`
 const ChangingLanguageMobile = styled.div`
     display: flex;
     gap: 5px;
-    p {
-        font-size: .7rem;
+    li {
+        a {
+            color: #000;
+            font-weight: 700;
+            &:visited {
+                color: #000;
+            }
+        }
     }
 `
 
-const MenuMobileContent = ({ handleChangeLanguage }) => {
+const MenuMobileContent = ({ handleChangeLanguage, setMobileMenuOpen }) => {
+
+    const handleCloseMenu = () => {
+        setMobileMenuOpen(false);
+    };
 
     const { t } = useTranslation();
 
   return (
-    <ContainerMobileContent>
-          
+      <ContainerMobileContent>
         <ContainerMainMobileContent>
             <ContainerHeaderMobileContent>
                 <ChangingLanguageMobile>
                       <li><a onClick={() => handleChangeLanguage('pt')} href="#">PT</a></li>
                       <li><a onClick={() => handleChangeLanguage('en')} href="#">EN</a></li>
                 </ChangingLanguageMobile>
-                  <ClosingMenu>
+                  <ClosingMenu onClick={handleCloseMenu}>
                       <span></span>
                       <span></span>
                   </ClosingMenu>
@@ -187,8 +196,7 @@ const MenuMobileContent = ({ handleChangeLanguage }) => {
                       <li><a href="https://www.instagram.com/henriquepxx/" target='_blank' rel='noreferrer'><FaInstagram /></a></li>
                 </ul>
             </div>
-        </ContainerFooterMobileContent>
-          
+          </ContainerFooterMobileContent>
     </ContainerMobileContent>
   )
 }

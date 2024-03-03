@@ -1,10 +1,18 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, createGlobalStyle } from 'styled-components';
 import { useTranslation } from "react-i18next";
 import { IoSearch } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import LanguageControl from '../components/LanguageControl';
+import MenuMobileContent from '../components/MenuMobileContent'; 
 
+const GlobalStyle = createGlobalStyle`
+    body {
+        overflow: ${(props) => (props.isMobileMenuOpen ? 'hidden' : 'visible')};
+        margin: 0;  // Resetting default body margin
+        padding: 0; // Resetting default body padding
+    }
+`;
 const HeaderContainer = styled.header`
     padding: 2rem 1rem 1rem 1rem;
     display: flex;
@@ -81,10 +89,15 @@ const MenuHamburger = styled.div`
 `
 
 const Header = () => {
-
     const { t, i18n } = useTranslation();
 
     const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+    const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const searchInputRef = useRef(null);
+    const languageButtonRef = useRef(null);
 
     const handleChangeLanguage = (newLanguage) => {
         if (newLanguage !== currentLanguage) {
@@ -92,12 +105,6 @@ const Header = () => {
             setCurrentLanguage(newLanguage);
         }
     };
-
-    const [isSearchOpen, setIsSearchOpen] = useState(false);
-    const [isLanguageOpen, setIsLanguageOpen] = useState(false);
-
-    const searchInputRef = useRef(null);
-    const languageButtonRef = useRef(null);
 
     const handleSearchClick = () => {
         setIsSearchOpen(!isSearchOpen);
@@ -121,6 +128,9 @@ const Header = () => {
         }
     }, [setIsLanguageOpen, languageButtonRef]);
 
+    const handleMenuToggle = () => {
+        setMobileMenuOpen(!isMobileMenuOpen);
+    };
 
     useEffect(() => {
         document.addEventListener('mousedown', handleSearchOutsideClick);
@@ -157,13 +167,21 @@ const Header = () => {
                             <IoSearch size={18} onClick={handleSearchClick} />
                         )}
                     </UlHeader>
-                    <MenuHamburger>
+                    <MenuHamburger onClick={handleMenuToggle}>
                         <span></span>
                         <span></span>
                         <span></span>
                     </MenuHamburger>
                 </NavHeader>
             </div>
+            {isMobileMenuOpen && (
+                <MenuMobileContent
+                    handleChangeLanguage={handleChangeLanguage}
+                    setMobileMenuOpen={setMobileMenuOpen}
+                    isMobileMenuOpen={isMobileMenuOpen}
+                />
+            )}
+            <GlobalStyle isMobileMenuOpen={isMobileMenuOpen} />
         </HeaderContainer>
     );
 };
