@@ -1,11 +1,9 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { useTranslation } from "react-i18next";
-import { AiOutlineGlobal } from 'react-icons/ai';
-import { IoIosArrowDown } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 import { Link } from 'react-router-dom';
-import MenuMobileContent from './MenuMobileContent';
+import LanguageControl from '../components/LanguageControl';
 
 const HeaderContainer = styled.header`
     padding: 2rem 1rem 1rem 1rem;
@@ -40,58 +38,12 @@ const NavHeader = styled.nav`
     display: flex;
     align-items: center;
 `
-const ChangeLanguage = styled.li`
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    cursor: pointer;
-    position: relative;
-`
-const LanguageToggle = styled.div`
-    display: flex;
-    align-items: center;
-`
 const fadeIn = keyframes`
     from {
         opacity: 0;
     }
     to {
         opacity: 1;
-    }
-`
-const Dropdown = styled.div`
-    position: absolute;
-    top: 32px;
-    left: 0;
-    transform: translateX(-30%);
-    width: 100%;
-    padding: 1rem 2.4rem;
-    background-color: #fff;  
-    border: 1px solid #ddd;  
-    z-index: 1;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);  
-    animation: ${fadeIn} 0.3s ease-out;
-
-    &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: -10px;
-        left: 30%;
-        width: 0px;
-        height: 0px;
-        border-bottom: 10px solid #fff; 
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-    }
-`
-const LanguageList = styled.ul`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    li {
-        font-weight: 500;
     }
 `
 const SearchInput = styled.input`
@@ -138,14 +90,11 @@ const Header = () => {
         if (newLanguage !== currentLanguage) {
             i18n.changeLanguage(newLanguage);
             setCurrentLanguage(newLanguage);
-            localStorage.setItem("newLanguage", newLanguage);
         }
     };
 
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isLanguageOpen, setIsLanguageOpen] = useState(false);
-    const [isHamburgerMenuOpen, setHamburgerMenuOpen] = useState(false);
-    const [isMobileMenuOpen, setMobileMenuOpen] = useState(false); 
 
     const searchInputRef = useRef(null);
     const languageButtonRef = useRef(null);
@@ -153,15 +102,11 @@ const Header = () => {
     const handleSearchClick = () => {
         setIsSearchOpen(!isSearchOpen);
         setIsLanguageOpen(false);
-        setHamburgerMenuOpen(false);
-        setMobileMenuOpen(false);
     };
 
     const handleLanguageClick = () => {
         setIsLanguageOpen(!isLanguageOpen);
         setIsSearchOpen(false);
-        setHamburgerMenuOpen(false);
-        setMobileMenuOpen(false); 
     };
 
     const handleSearchOutsideClick = useCallback((e) => {
@@ -176,10 +121,6 @@ const Header = () => {
         }
     }, [setIsLanguageOpen, languageButtonRef]);
 
-    const handleHamburgerClick = () => {
-        setHamburgerMenuOpen(!isHamburgerMenuOpen);
-        setMobileMenuOpen(!isMobileMenuOpen); 
-    };
 
     useEffect(() => {
         document.addEventListener('mousedown', handleSearchOutsideClick);
@@ -199,20 +140,12 @@ const Header = () => {
                     <UlHeader>
                         <li><Link to="/">{t('header.start')}</Link></li>
                         <li><a href="https://github.com/henriquepx" target="_blank" rel="noopener noreferrer">{t('header.portfolio')}</a></li>
-                        <ChangeLanguage ref={languageButtonRef}>
-                            <LanguageToggle onClick={handleLanguageClick}>
-                                <AiOutlineGlobal size={18} />
-                                <IoIosArrowDown size={18} />
-                            </LanguageToggle>
-                            {isLanguageOpen && (
-                                <Dropdown>
-                                    <LanguageList>
-                                        <li><a onClick={() => handleChangeLanguage('pt')} href="#">PT</a></li>
-                                        <li><a onClick={() => handleChangeLanguage('en')} href="#">EN</a></li>
-                                    </LanguageList>
-                                </Dropdown>
-                            )}
-                        </ChangeLanguage>
+                        <LanguageControl
+                            isOpen={isLanguageOpen}
+                            onToggle={handleLanguageClick}
+                            onLanguageChange={handleChangeLanguage}
+                            languageButtonRef={languageButtonRef}
+                        />
 
                         {isSearchOpen ? (
                             <SearchInput
@@ -224,12 +157,11 @@ const Header = () => {
                             <IoSearch size={18} onClick={handleSearchClick} />
                         )}
                     </UlHeader>
-                    <MenuHamburger onClick={handleHamburgerClick}>
+                    <MenuHamburger>
                         <span></span>
                         <span></span>
                         <span></span>
                     </MenuHamburger>
-                    <MenuMobileContent setMobileMenuOpen={setMobileMenuOpen} handleChangeLanguage={handleChangeLanguage} />
                 </NavHeader>
             </div>
         </HeaderContainer>

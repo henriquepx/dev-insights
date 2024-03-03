@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import GlobalStyles from './GlobalStyles';
 import Preloader from './components/Preloader';
-import Header from './components/Header';
+import Header from './sections/Header';
 import ArticleView from './pages/ArticleView';
 import SobreMimPage from './pages/SobreMimPage';
 

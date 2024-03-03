@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import Profile from '../components/Profile'
-import Main from '../components/Main'
+import Profile from '../sections/Profile'
+import Main from '../sections/Main'
 
 const ContainerSobreMim = styled.div`
   padding: 1rem 1rem 2rem 1rem;

@@ -65,11 +65,10 @@ const ArticleContainer = styled.div`
 const LinkWrapper = styled(Link)`
   transition: transform 0.3s ease-in-out;
   img {
-        max-width: 100%;
-        width: 700px;
+        width: 300px;
         border-radius: 20px;
         @media (max-width: 754px) {
-          max-width: 100%;
+          width: 100%;
         }
     }
 `

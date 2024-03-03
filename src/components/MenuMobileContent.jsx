@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { useEffect } from 'react';
 import { FaGoogle, FaLinkedin, FaGithub, FaWhatsapp, FaInstagram } from 'react-icons/fa'
 import { IoIosArrowForward } from "react-icons/io";
 import PropTypes from 'prop-types';
@@ -131,21 +130,9 @@ const ChangingLanguageMobile = styled.div`
     }
 `
 
-const MenuMobileContent = ({ setMobileMenuOpen, handleChangeLanguage }) => {
+const MenuMobileContent = ({ handleChangeLanguage }) => {
 
     const { t } = useTranslation();
-
-    useEffect(() => {
-        document.body.style.overflow = 'hidden';
-        return () => {
-            document.body.style.overflow = 'auto';
-        };
-    }, []); 
-
-    const handleCloseMenu = () => {
-        setMobileMenuOpen(false);
-    };
-
 
   return (
     <ContainerMobileContent>
@@ -156,10 +143,10 @@ const MenuMobileContent = ({ setMobileMenuOpen, handleChangeLanguage }) => {
                       <li><a onClick={() => handleChangeLanguage('pt')} href="#">PT</a></li>
                       <li><a onClick={() => handleChangeLanguage('en')} href="#">EN</a></li>
                 </ChangingLanguageMobile>
-                <ClosingMenu onClick={handleCloseMenu}>
-                    <span></span>
-                    <span></span>
-                </ClosingMenu>
+                  <ClosingMenu>
+                      <span></span>
+                      <span></span>
+                  </ClosingMenu>
             </ContainerHeaderMobileContent>
               
             <ContainerLinksMobileContent>
@@ -208,7 +195,8 @@ const MenuMobileContent = ({ setMobileMenuOpen, handleChangeLanguage }) => {
 
 MenuMobileContent.propTypes = {
     setMobileMenuOpen: PropTypes.func.isRequired,
-    handleChangeLanguage: PropTypes.func.isRequired
+    handleChangeLanguage: PropTypes.func.isRequired,
+    isMobileMenuOpen: PropTypes.bool.isRequired,
 };
 
 

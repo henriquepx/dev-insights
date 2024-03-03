@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import Article from './Article'
+import Article from '../components/Article';
 import { useTranslation } from "react-i18next";
 
 const showingText = keyframes`
@@ -37,7 +37,7 @@ const Main = () => {
   const { t } = useTranslation();
 
   return (
-      <MainContainer>
+    <MainContainer>
       <h1>{t('main.title')}</h1>
       <AllArticles>
         <Article

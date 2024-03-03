@@ -51,25 +51,25 @@ const SocialMedias = styled.div`
 const Profile = () => {
     const { t } = useTranslation();
 
-  return (
-      <ProfileContainer>
-          <DescriptionAboutMe>{t('profile.description')}</DescriptionAboutMe>
-          <SocialMedias>
-            <nav>
-                <ul>
-                    <li>
-                        <FaLinkedin size={18} />
-                        <a href="https://www.linkedin.com/in/henriquepinheiroxavier/" rel="noreferrer" target="_blank">Henrique Pinheiro</a>
-                    </li>
-                    <li>
-                        <FaGithub size={18} />
-                        <a href="https://github.com/henriquepx" rel="noreferrer" target="_blank">@henriquepx</a>
-                    </li>
-                </ul>
-            </nav>
-          </SocialMedias>
-    </ProfileContainer>
-  )
+    return (
+        <ProfileContainer>
+            <DescriptionAboutMe>{t('profile.description')}</DescriptionAboutMe>
+            <SocialMedias>
+                <nav>
+                    <ul>
+                        <li>
+                            <FaLinkedin size={18} />
+                            <a href="https://www.linkedin.com/in/henriquepinheiroxavier/" rel="noreferrer" target="_blank">Henrique Pinheiro</a>
+                        </li>
+                        <li>
+                            <FaGithub size={18} />
+                            <a href="https://github.com/henriquepx" rel="noreferrer" target="_blank">@henriquepx</a>
+                        </li>
+                    </ul>
+                </nav>
+            </SocialMedias>
+        </ProfileContainer>
+    )
 }
 
 export default Profile
