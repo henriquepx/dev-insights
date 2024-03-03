@@ -117,6 +117,7 @@
     "menumobile": {
         "home": "Home",
         "portfolio": "Portfolio",
-        "contact": "Contact"
+        "contact": "Contact",
+        "credits": "@2024 Henrique. All rights reserved. Developed in ReactJS & Styled-Components."
     }
 }

@@ -117,6 +117,7 @@
     "menumobile": {
         "home": "Inicio",
         "portfolio": "Portfólio",
-        "contact": "Contato"
+        "contact": "Contato",
+        "credits": "@2024 Henrique. Todos os direitos reservados. Desenvolvido em ReactJS & Styled-Components."
     }
 }

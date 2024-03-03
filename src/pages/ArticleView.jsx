@@ -63,7 +63,6 @@ const DescriptionArticleView = styled.div`
 
   display: flex;
   flex-direction: column;
-  gap: 50px;
   text-align: left;
 `
 const ShareArticle = styled.div`
@@ -71,6 +70,7 @@ const ShareArticle = styled.div`
   flex-direction: column;
   gap: 10px;
   width: 100%;
+  margin: 1rem 0rem 3rem 0rem;
   p {
     font-size: 1rem;
     margin: 0;
@@ -87,7 +87,7 @@ const TextsArticle = styled.div`
   }
 `
 const LinkGoBack = styled(Link)`
-  font-size: .7rem;
+  font-size: 1rem;
   color: #000;
   text-align: left; 
   &:visited {
@@ -104,7 +104,6 @@ const ArticleView = ({ title, date, image, content, projectId }) => {
   return (
     <ArticleViewContainer>
       <ArticleViewIntro>
-        <LinkGoBack to="/">{'< Voltar para Home'}</LinkGoBack>
         <h1>{translatedTitle}</h1>
         <p>{date}</p>
       </ArticleViewIntro>
@@ -123,6 +122,7 @@ const ArticleView = ({ title, date, image, content, projectId }) => {
             <a href="#"><ImgRedes src="/instagram.svg" alt="" /></a>
           </div>
         </ShareArticle>
+        <LinkGoBack to="/">{'< Voltar para Home'}</LinkGoBack>
       </DescriptionArticleView>
       <BackToTop />
     </ArticleViewContainer>

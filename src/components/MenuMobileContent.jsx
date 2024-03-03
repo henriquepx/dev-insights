@@ -186,7 +186,7 @@ const MenuMobileContent = ({ handleChangeLanguage, setMobileMenuOpen }) => {
         </ContainerMainMobileContent>
 
         <ContainerFooterMobileContent>
-            <p>@2024 Henrique. Todos os direitos reservados. Desenvolvido em ReactJS & Styled-Components.</p>
+              <p>{t('menumobile.credits')}</p>
             <div>
                 <ul>
                       <li><a href="https://www.linkedin.com/in/henriquepinheiroxavier/" target='_blank' rel='noreferrer'><FaLinkedin /></a></li>
