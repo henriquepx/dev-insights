@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import styled, { keyframes, createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { useTranslation } from "react-i18next";
-import { IoSearch } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import LanguageControl from '../components/LanguageControl';
 import MenuMobileContent from '../components/MenuMobileContent'; 
@@ -9,10 +8,11 @@ import MenuMobileContent from '../components/MenuMobileContent';
 const GlobalStyle = createGlobalStyle`
     body {
         overflow: ${(props) => (props.isMobileMenuOpen ? 'hidden' : 'visible')};
-        margin: 0;  // Resetting default body margin
-        padding: 0; // Resetting default body padding
+        margin: 0; 
+        padding: 0; 
     }
 `;
+
 const HeaderContainer = styled.header`
     padding: 2rem 1rem 1rem 1rem;
     display: flex;
@@ -22,11 +22,13 @@ const HeaderContainer = styled.header`
     max-width: 1300px;
     width: 100%;
     margin: 0 auto;
-`
+`;
+
 const TitleHeader = styled.h1`
     color: #000;
     font-weight: 600;
-`
+`;
+
 const UlHeader = styled.ul`
     display: flex;
     align-items: center;
@@ -41,62 +43,48 @@ const UlHeader = styled.ul`
     @media (max-width: 640px) {
         display: none;
     }
-`
+`;
+
 const NavHeader = styled.nav`
     display: flex;
     align-items: center;
-`
-const fadeIn = keyframes`
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-`
-const SearchInput = styled.input`
-    padding: 3px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    animation: ${fadeIn} 0.3s ease-out;
-`
+`;
+
 const MenuHamburger = styled.div`
-  cursor: pointer;
-  padding: 3px 5px 0px 5px;
-  border-radius: 10px;
-  z-index: 10;
-  display: none;
-  @media (max-width: 640px) {
+    cursor: pointer;
+    padding: 3px 5px 0px 5px;
+    border-radius: 10px;
+    z-index: 10;
+    display: none;
+    @media (max-width: 640px) {
         display: block;
     }
-  span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto 0px auto;
-    transition: all 0.3s ease-in-out;
-    background-color: #000000;
-    &:nth-child(1) {
-      transform: translateY(${props => (props.open ? '8px' : '0')}) rotate(${props => (props.open ? '45deg' : '0')});
+    span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto 0px auto;
+        transition: all 0.3s ease-in-out;
+        background-color: #000000;
+        &:nth-child(1) {
+            transform: translateY(${props => (props.open ? '8px' : '0')}) rotate(${props => (props.open ? '45deg' : '0')});
+        }
+        &:nth-child(2) {
+            opacity: ${props => (props.open ? '0' : '1')};
+        }
+        &:nth-child(3) {
+            transform: translateY(${props => (props.open ? '-8px' : '0')}) rotate(${props => (props.open ? '-45deg' : '0')});
+        }
     }
-    &:nth-child(2) {
-      opacity: ${props => (props.open ? '0' : '1')};
-    }
-    &:nth-child(3) {
-      transform: translateY(${props => (props.open ? '-8px' : '0')}) rotate(${props => (props.open ? '-45deg' : '0')});
-    }
-  }
-`
+`;
 
 const Header = () => {
     const { t, i18n } = useTranslation();
 
     const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
-    const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isLanguageOpen, setIsLanguageOpen] = useState(false);
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-    const searchInputRef = useRef(null);
     const languageButtonRef = useRef(null);
 
     const handleChangeLanguage = (newLanguage) => {
@@ -106,21 +94,9 @@ const Header = () => {
         }
     };
 
-    const handleSearchClick = () => {
-        setIsSearchOpen(!isSearchOpen);
-        setIsLanguageOpen(false);
-    };
-
     const handleLanguageClick = () => {
         setIsLanguageOpen(!isLanguageOpen);
-        setIsSearchOpen(false);
     };
-
-    const handleSearchOutsideClick = useCallback((e) => {
-        if (searchInputRef.current && !searchInputRef.current.contains(e.target)) {
-            setIsSearchOpen(false);
-        }
-    }, [setIsSearchOpen, searchInputRef]);
 
     const handleLanguageOutsideClick = useCallback((e) => {
         if (languageButtonRef.current && !languageButtonRef.current.contains(e.target)) {
@@ -133,14 +109,12 @@ const Header = () => {
     };
 
     useEffect(() => {
-        document.addEventListener('mousedown', handleSearchOutsideClick);
         document.addEventListener('mousedown', handleLanguageOutsideClick);
 
         return () => {
-            document.removeEventListener('mousedown', handleSearchOutsideClick);
             document.removeEventListener('mousedown', handleLanguageOutsideClick);
         };
-    }, [handleSearchOutsideClick, handleLanguageOutsideClick]);
+    }, [handleLanguageOutsideClick]);
 
     return (
         <HeaderContainer>
@@ -156,16 +130,6 @@ const Header = () => {
                             onLanguageChange={handleChangeLanguage}
                             languageButtonRef={languageButtonRef}
                         />
-
-                        {isSearchOpen ? (
-                            <SearchInput
-                                type="text"
-                                placeholder="Search..."
-                                ref={searchInputRef}
-                            />
-                        ) : (
-                            <IoSearch size={18} onClick={handleSearchClick} />
-                        )}
                     </UlHeader>
                     <MenuHamburger onClick={handleMenuToggle}>
                         <span></span>
