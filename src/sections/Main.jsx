@@ -40,25 +40,11 @@ const Main = () => {
     <MainContainer>
       <h1>{t('main.title')}</h1>
       <AllArticles>
-        <Article
-          imgproject={'bg1.jpg'}
-          imgalt={'VueJS x ReactJS x AngularJS'}
-          titlearticle={t('main.mainTitleProject1')}
-          descriptionarticle={t('main.mainDescriptionProject1')}
-          linktoknowbetter={'reactxangularxvue'}
-        />
-        <Article
-          imgproject={'styledcomponents.png'}
-          imgalt={'Styled Components'}
-          titlearticle={t('main.mainTitleProject2')}
-          descriptionarticle={t('main.mainDescriptionProject2')}
-          linktoknowbetter={'styledcomponents'}
-        />
-        <Article
+      <Article
           imgproject={'git.jpg'}
           imgalt={'Git'}
-          titlearticle={t('main.mainTitleProject3')}
-          descriptionarticle={t('main.mainDescriptionProject3')}
+          titlearticle={t('main.mainTitleProject1')}
+          descriptionarticle={t('main.mainDescriptionProject1')}
           linktoknowbetter={'gittutorial'}
         />
       </AllArticles>

@@ -9,12 +9,8 @@
     },
     "main": {
         "title": "All my articles",
-        "mainTitleProject1": "What is the best framework after learning JavaScript?",
-        "mainDescriptionProject1": "Explore the best post-JavaScript frameworks: React, Angular, Vue.js, highlighting features and providing guidance on choosing to improve web development skills.",
-        "mainTitleProject2": "Learn CSS-IN-JS with Styled Components.",
-        "mainDescriptionProject2": "Explore powerful styling in React applications with Styled Components. Learn CSS-IN-JS, improve your skills and optimize web design efficiently.",
-        "mainTitleProject3": "Git: Understand the main commands.",
-        "mainDescriptionProject3": "Dive deeper into the world of version control with Git: An in-depth look at the key commands to enhance your Development experience."
+        "mainTitleProject1": "Git: Understand the main commands.",
+        "mainDescriptionProject1": "Dive deeper into the world of version control with Git: An in-depth look at the key commands to enhance your Development experience."
     },
     "article": {
         "linkToKnowBetter": "Know more"
@@ -24,70 +20,6 @@
     },
     "projects": {
         "project1": {
-            "title": "What is the best Framework after learning JavaScript?",
-            "content": [
-                "1. React: The Goddess of Reactivity",
-                "React, developed by Facebook, is a framework that revolutionized the construction of user interfaces. The foundation of React lies in the concept of componentization, where the interface is broken down into reusable components. The Virtual DOM, a lightweight abstraction of the real DOM, optimizes updates, resulting in exceptional performance in large-scale applications.",
-                "The React community is extensive and diverse, providing not only technical support but also a myriad of resources, tutorials, and solutions to common challenges. JSX syntax, a JavaScript extension that allows for XML/HTML embedding, offers an elegant and efficient approach to building components.",
-                "To get started, the Official React Documentation is a comprehensive guide. In the Interactive Tutorial, you can build an application step by step, solidifying your practical understanding.",
-                "2. Angular: The MVC Giant",
-                "Angular, maintained by Google, is a solid choice for large-scale projects. Based on the MVC design pattern, Angular provides an organized framework, dividing the application into Model, View, and Controller. Dependency injection facilitates modularization and unit testing.",
-                "The decision to adopt TypeScript as the main language strengthens code robustness by introducing static typing. The Angular CLI streamlines project initialization and task automation, while extensive official documentation provides deep insights into each concept.",
-                "The Official Angular Documentation is a rich source of knowledge, including details on all aspects of Angular development. The Quick Start Guide provides a pragmatic starting point.",
-                "Embrace modularization through modules and services. The Angular CLI, in addition to initialization, facilitates the generation of components, modules, and services, making it an indispensable tool.",
-                "3. Vue.js: The Elegance of Simplicity",
-                "Vue.js stands out for its incremental approach and simplicity. Developed to be easily integrated into existing projects, Vue.js offers efficient reactivity without the complexity of other solutions.",
-                "Vue.js's flexibility is evident in its clean syntax and smooth learning curve. The reactivity system, inspired by React, makes interface updates quick and effective. Vue CLI streamlines project initialization, while Vuex offers robust state management.",
-                "The Official Vue.js Documentation is a comprehensive guide for both beginners and advanced developers. The Components Guide explores specific details about building and reusing Vue components.",
-                "For quick initialization, Vue CLI offers predefined and customizable configurations. In larger projects, integrating Vuex for centralized state management is highly recommended.",
-                "Conclusion: Towards Excellence in Web Development and Front-end Development",
-                "In summary, the choice between React, Angular, and Vue.js is a strategic decision that will shape your journey in web development. Delving into each framework is more than a simple technical choice; it's an opportunity for growth, learning, and mastery. The official documentation, online communities, and constant practice are your allies in this journey. By choosing and exploring one of these frameworks, you not only elevate your development skills but also become part of a vibrant and innovative community. May your journey be filled with discoveries and extraordinary achievements!"
-            ]
-        },
-        "project2": {
-            "title": "Learn CSS-IN-JS with Styled Components.",
-            "content": [
-                "CSS-IN-JS with Styled Components: Unlocking the Magic of Styling in React",
-                "Venturing into the vast world of front-end development often means facing the challenge of dealing with styles and styling efficiently. It is in this context that the revolutionary technique known as CSS-IN-JS emerges, and one of the most powerful tools for incorporating it into React projects is Styled Components.",
-                "What is CSS-IN-JS?",
-                "Before we dive into the wonders of Styled Components, it's essential to understand the concept behind CSS-IN-JS. This innovative approach proposes the idea of writing styles directly within the scope of JavaScript, thus eliminating the need for separate style files. This not only simplifies code organization but also provides an encapsulated scope for styles, avoiding conflicts.",
-                "Styled Components: A Revolution in Styling in React",
-                "Styled Components is a library for React that takes CSS-IN-JS to a new level. By using the elegant and expressive syntax of JavaScript to define styles, you create React components styled intuitively and dynamically.",
-                "Key Advantages:",
-                "1. Natural Encapsulation: Each Styled Components component encapsulates its styles, preventing unwanted style leakage.",
-                "2. Dynamic Interpolation: Seamless JavaScript integration allows dynamic interpolation in styles, easily adapting to different states and properties.",
-                "3. Simplified Maintenance: With styles close to the code that uses them, maintenance becomes more intuitive and less error-prone.",
-                "4. Efficient Reusability: Style reuse is facilitated, promoting a DRY (Don't Repeat Yourself) approach.",
-                "How to Use:",
-                "Let's explore a basic example of using Styled Components in React:",
-                "```javascript",
-                "import styled from 'styled-components';",
-                "const StyledButton = styled.button`",
-                "  background-color: #3498db;",
-                "  color: #fff;",
-                "  padding: 10px 20px;",
-                "  border: none;",
-                "  border-radius: 5px;",
-                "  cursor: pointer;",
-                "  &:hover {",
-                "    background-color: #2980b9;",
-                "  }",
-                "`;",
-                "const MyComponent = () => {",
-                "  return (",
-                "    <div>",
-                "      <h1>Exploring Styled Components</h1>",
-                "      <StyledButton>Click Me</StyledButton>",
-                "    </div>",
-                "  );",
-                "};",
-                "```",
-                "Conclusion:",
-                "By mastering CSS-IN-JS with Styled Components, you open the doors to more elegant, modular, and easily maintainable front-end development. This powerful combination not only makes styling a more enjoyable experience but also boosts the efficiency of your React code.",
-                "Be prepared to explore a new world of stylistic possibilities while enhancing the quality and readability of your code. May your journey in Styled Components be as exciting as the incredible visual results you are about to achieve! 🚀✨"
-            ]
-        },
-        "project3": {
             "title": "Git: Understand the main commands.",
             "content": [
                 "Unraveling the Mysteries of Git: A Complete Guide for Beginners and Beyond",
@@ -110,7 +42,7 @@
                 "8. `git push`: Send local commits to a remote repository, synchronizing code across different environments.",
                 "9. `git pull`: Update the local repository with the latest changes from the remote repository, ensuring consistency.",
                 "10. `git clone`: Clone an existing repository, allowing the acquisition of a local copy for development.",
-                "By internalizing the knowledge provided by this guide and incorporating the top Git commands, you will be prepared to face the challenges of collaborative development, exploring all the potentialities offered by this powerful tool. Don't just learn commands; absorb concepts and strategies that elevate your proficiency in using Git. May your journey in this vast version control ecosystem be filled with discoveries and extraordinary achievements! 🚀🔗"
+                "By internalizing the knowledge provided by this guide and incorporating the top Git commands, you will be prepared to face the challenges of collaborative development, exploring all the potentialities offered by this powerful tool. Don't just learn commands; absorb concepts and strategies that elevate your proficiency in using Git. May your journey in this vast version control ecosystem be filled with discoveries and extraordinary achievements!"
             ]
         }
     },

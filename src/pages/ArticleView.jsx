@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { Link } from 'react-router-dom';
 import BackToTop from '../components/BackToTop';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
@@ -39,7 +40,6 @@ const ArticleViewContainer = styled.div`
     }
 `
 const ArticleViewIntro = styled.div`
-
 `
 const ImgBg = styled.img`
   border-radius: 20px;
@@ -87,6 +87,14 @@ const TextsArticle = styled.div`
     margin: 20px 0;
   }
 `
+const LinkGoBack = styled(Link)`
+  font-size: 1rem;
+  color: #000;
+  text-align: center; 
+  &:visited {
+    color: #000;
+  }
+`
 
 const ArticleView = ({ title, date, image, content, projectId }) => {
   const { t } = useTranslation();
@@ -118,6 +126,7 @@ const ArticleView = ({ title, date, image, content, projectId }) => {
             </a>
           </div>
         </ShareArticle>
+        <LinkGoBack to="/">{'< Voltar para Home'}</LinkGoBack>
       </DescriptionArticleView>
       <BackToTop />
     </ArticleViewContainer>
