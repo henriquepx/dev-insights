@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import { Link } from 'react-router-dom';
 import BackToTop from '../components/BackToTop';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
@@ -88,14 +87,6 @@ const TextsArticle = styled.div`
     margin: 20px 0;
   }
 `
-const LinkGoBack = styled(Link)`
-  font-size: 1rem;
-  color: #000;
-  text-align: left; 
-  &:visited {
-    color: #000;
-  }
-`
 
 const ArticleView = ({ title, date, image, content, projectId }) => {
   const { t } = useTranslation();
@@ -119,12 +110,14 @@ const ArticleView = ({ title, date, image, content, projectId }) => {
         <ShareArticle>
           <p>{t('viewarticle.shareArticle')}</p>
           <div>
-            <a href="#"><ImgRedes src="/twitter.svg" alt="" /></a>
-            <a href="#"><ImgRedes src="/linkedin.svg" alt="" /></a>
-            <a href="#"><ImgRedes src="/instagram.svg" alt="" /></a>
+          <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(translatedTitle)}&url=https://dev-insights-self.vercel.app/`} target="_blank" rel="noreferrer">
+              <ImgRedes src="/twitter.svg" alt="Twitter" />
+            </a>
+            <a href={`https://www.linkedin.com/sharing/share-offsite/?url=https://dev-insights-self.vercel.app/&title=${encodeURIComponent(translatedTitle)}`} target="_blank" rel="noreferrer">
+              <ImgRedes src="/linkedin.svg" alt="LinkedIn" />
+            </a>
           </div>
         </ShareArticle>
-        <LinkGoBack to="/">{'< Voltar para Home'}</LinkGoBack>
       </DescriptionArticleView>
       <BackToTop />
     </ArticleViewContainer>
