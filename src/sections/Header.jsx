@@ -104,9 +104,7 @@ const Header = () => {
         }
     }, [setIsLanguageOpen, languageButtonRef]);
 
-    const handleMenuToggle = () => {
-        setMobileMenuOpen(!isMobileMenuOpen);
-    };
+    const handleMenuToggle = () => {setMobileMenuOpen(!isMobileMenuOpen)};
 
     useEffect(() => {
         document.addEventListener('mousedown', handleLanguageOutsideClick);
@@ -123,7 +121,7 @@ const Header = () => {
                 <NavHeader>
                     <UlHeader>
                         <li><Link to="/">{t('header.start')}</Link></li>
-                        <li><a href="https://github.com/henriquepx" target="_blank" rel="noopener noreferrer">{t('header.portfolio')}</a></li>
+                        <li><a href="https://henriqdev.vercel.app/" target="_blank" rel="noopener noreferrer">{t('header.portfolio')}</a></li>
                         <LanguageControl
                             isOpen={isLanguageOpen}
                             onToggle={handleLanguageClick}

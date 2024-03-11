@@ -67,6 +67,8 @@ const DescriptionArticleView = styled.div`
 `
 const ShareArticle = styled.div`
   display: flex;
+  align-items: center;
+  text-align: center;
   flex-direction: column;
   gap: 10px;
   width: 100%;

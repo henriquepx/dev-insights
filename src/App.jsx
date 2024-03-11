@@ -74,7 +74,7 @@ const article2 = {
     '```',
     'Conclusão:',
     'Ao dominar CSS-IN-JS com Styled Components, você abre as portas para um desenvolvimento front-end mais elegante, modular e fácil de manter. Esta poderosa combinação não apenas transforma a estilização em uma experiência mais agradável, mas também impulsiona a eficiência do seu código React.',
-    'Esteja preparado para explorar um novo mundo de possibilidades estilísticas enquanto eleva a qualidade e a legibilidade do seu código. Que sua jornada em Styled Components seja tão empolgante quanto os resultados visuais incríveis que você está prestes a conquistar! 🚀✨',
+    'Esteja preparado para explorar um novo mundo de possibilidades estilísticas enquanto eleva a qualidade e a legibilidade do seu código. Que sua jornada em Styled Components seja tão empolgante quanto os resultados visuais incríveis que você está prestes a conquistar!',
   ],
   projectId: 'project2'
 };
@@ -104,7 +104,7 @@ const article3 = {
     '8. `git push`: Envie commits locais para um repositório remoto, sincronizando o código entre diferentes ambientes.',
     '9. `git pull`: Atualize o repositório local com as últimas alterações do repositório remoto, garantindo consistência.',
     '10. `git clone`: Clone um repositório existente, possibilitando a obtenção de uma cópia local para desenvolvimento.',
-    'Ao internalizar os conhecimentos proporcionados por este guia e incorporar os principais comandos do Git, você estará preparado para enfrentar os desafios do desenvolvimento colaborativo, explorando todas as potencialidades oferecidas por essa poderosa ferramenta. Não apenas aprenda comandos; absorva conceitos e estratégias que elevam sua proficiência no uso do Git. Que sua jornada neste vasto ecossistema de controle de versão seja repleta de descobertas e conquistas extraordinárias! 🚀🔗',
+    'Ao internalizar os conhecimentos proporcionados por este guia e incorporar os principais comandos do Git, você estará preparado para enfrentar os desafios do desenvolvimento colaborativo, explorando todas as potencialidades oferecidas por essa poderosa ferramenta. Não apenas aprenda comandos; absorva conceitos e estratégias que elevam sua proficiência no uso do Git. Que sua jornada neste vasto ecossistema de controle de versão seja repleta de descobertas e conquistas extraordinárias!',
   ],
   projectId: 'project3'
 };
