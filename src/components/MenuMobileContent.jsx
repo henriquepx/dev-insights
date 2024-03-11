@@ -1,8 +1,9 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { FaGoogle, FaLinkedin, FaGithub, FaWhatsapp, FaInstagram } from 'react-icons/fa'
 import { IoIosArrowForward } from "react-icons/io";
 import PropTypes from 'prop-types';
 import { useTranslation } from "react-i18next";
+import { Link } from 'react-router-dom';
 
 const ContainerMobileContent = styled.div`
     background-color: #f8f8f8;
@@ -161,14 +162,14 @@ const MenuMobileContent = ({ handleChangeLanguage, setMobileMenuOpen }) => {
             <ContainerLinksMobileContent>
                 <ul>
                       <li>
-                          <a href="#">
+                          <Link to="/" onClick={handleCloseMenu}>
                               {t('menumobile.home')}
                               <IoIosArrowForward size={22} />
-                          </a>
+                          </Link>
                           
                       </li>
                       <li>
-                          <a href="#">
+                          <a href="https://henriqdev.vercel.app/" target='_blank' rel='noreferrer'>
                               {t('menumobile.portfolio')}
                                 <IoIosArrowForward size={22} />
                           </a>
