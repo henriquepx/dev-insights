@@ -121,7 +121,7 @@ const Header = () => {
                 <NavHeader>
                     <UlHeader>
                         <li><Link to="/">{t('header.start')}</Link></li>
-                        <li><a href="https://henriqdev.vercel.app/" target="_blank" rel="noopener noreferrer">{t('header.portfolio')}</a></li>
+                        <li><a href="https://portfolio-henriquepx.vercel.app/" target="_blank" rel="noopener noreferrer">{t('header.portfolio')}</a></li>
                         <LanguageControl
                             isOpen={isLanguageOpen}
                             onToggle={handleLanguageClick}
