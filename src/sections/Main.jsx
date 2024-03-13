@@ -47,6 +47,13 @@ const Main = () => {
           descriptionarticle={t('main.mainDescriptionProject1')}
           linktoknowbetter={'gittutorial'}
         />
+        <Article
+          imgproject={'styledcomponents.png'}
+          imgalt={'Styled Components'}
+          titlearticle={t('main.mainTitleProject2')}
+          descriptionarticle={t('main.mainDescriptionProject2')}
+          linktoknowbetter={'styledcomponents'}
+        />
       </AllArticles>
     </MainContainer>
   )

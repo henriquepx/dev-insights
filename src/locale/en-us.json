@@ -10,7 +10,9 @@
     "main": {
         "title": "All my articles",
         "mainTitleProject1": "Git: Understand the main commands.",
-        "mainDescriptionProject1": "Dive deeper into the world of version control with Git: An in-depth look at the key commands to enhance your Development experience."
+        "mainDescriptionProject1": "Dive deeper into the world of version control with Git: An in-depth look at the key commands to enhance your Development experience.",
+        "mainTitleProject2": "Learn CSS-IN-JS with Styled Components.",
+        "mainDescriptionProject2": "Explore powerful styling in React applications with Styled Components. Learn CSS-IN-JS, improve your skills and optimize web design efficiently."
     },
     "article": {
         "linkToKnowBetter": "Know more"
@@ -43,6 +45,49 @@
                 "9. `git pull`: Update the local repository with the latest changes from the remote repository, ensuring consistency.",
                 "10. `git clone`: Clone an existing repository, allowing the acquisition of a local copy for development.",
                 "By internalizing the knowledge provided by this guide and incorporating the top Git commands, you will be prepared to face the challenges of collaborative development, exploring all the potentialities offered by this powerful tool. Don't just learn commands; absorb concepts and strategies that elevate your proficiency in using Git. May your journey in this vast version control ecosystem be filled with discoveries and extraordinary achievements!"
+            ]
+        },
+        "project2": {
+            "title": "Learn CSS-IN-JS with Styled Components.",
+            "content": [
+                "CSS-IN-JS with Styled Components: Unlocking the Magic of Styling in React",
+                "Venturing into the vast world of front-end development often means facing the challenge of dealing with styles and styling efficiently. It is in this context that the revolutionary technique known as CSS-IN-JS emerges, and one of the most powerful tools for incorporating it into React projects is Styled Components.",
+                "What is CSS-IN-JS?",
+                "Before we dive into the wonders of Styled Components, it's essential to understand the concept behind CSS-IN-JS. This innovative approach proposes the idea of writing styles directly within the scope of JavaScript, thus eliminating the need for separate style files. This not only simplifies code organization but also provides an encapsulated scope for styles, avoiding conflicts.",
+                "Styled Components: A Revolution in Styling in React",
+                "Styled Components is a library for React that takes CSS-IN-JS to a new level. By using the elegant and expressive syntax of JavaScript to define styles, you create React components styled intuitively and dynamically.",
+                "Key Advantages:",
+                "1. Natural Encapsulation: Each Styled Components component encapsulates its styles, preventing unwanted style leakage.",
+                "2. Dynamic Interpolation: Seamless JavaScript integration allows dynamic interpolation in styles, easily adapting to different states and properties.",
+                "3. Simplified Maintenance: With styles close to the code that uses them, maintenance becomes more intuitive and less error-prone.",
+                "4. Efficient Reusability: Style reuse is facilitated, promoting a DRY (Don't Repeat Yourself) approach.",
+                "How to Use:",
+                "Let's explore a basic example of using Styled Components in React:",
+                "```javascript",
+                "import styled from 'styled-components';",
+                "const StyledButton = styled.button`",
+                "  background-color: #3498db;",
+                "  color: #fff;",
+                "  padding: 10px 20px;",
+                "  border: none;",
+                "  border-radius: 5px;",
+                "  cursor: pointer;",
+                "  &:hover {",
+                "    background-color: #2980b9;",
+                "  }",
+                "`;",
+                "const MyComponent = () => {",
+                "  return (",
+                "    <div>",
+                "      <h1>Exploring Styled Components</h1>",
+                "      <StyledButton>Click Me</StyledButton>",
+                "    </div>",
+                "  );",
+                "};",
+                "```",
+                "Conclusion:",
+                "By mastering CSS-IN-JS with Styled Components, you open the doors to more elegant, modular, and easily maintainable front-end development. This powerful combination not only makes styling a more enjoyable experience but also boosts the efficiency of your React code.",
+                "Be prepared to explore a new world of stylistic possibilities while enhancing the quality and readability of your code. May your journey in Styled Components be as exciting as the incredible visual results you are about to achieve!"
             ]
         }
     },

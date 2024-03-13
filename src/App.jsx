@@ -37,7 +37,56 @@ const article1 = {
   projectId: 'project1'
 };
 
-const articles = [article1];
+const article2 = {
+  id: 'styledcomponents',
+  title: 'Aprenda CSS-IN-JS com Styled Components.',
+  date: '21/02/2024',
+  image: '/styledcomponentsbanner.png',
+  content: [
+    'CSS-IN-JS com Styled Components: Desvendando a Magia da Estilização em React',
+    'Se aventurar no vasto mundo do desenvolvimento front-end muitas vezes significa enfrentar o desafio de lidar com estilos e estilização de maneira eficiente. É nesse contexto que surge a técnica revolucionária conhecida como CSS-IN-JS, e uma das ferramentas mais poderosas para incorporá-la em projetos React é o Styled Components.',
+    'O que é CSS-IN-JS?',
+    'Antes de mergulharmos nas maravilhas do Styled Components, é essencial compreender o conceito por trás do CSS-IN-JS. Essa abordagem inovadora propõe a ideia de escrever estilos diretamente no escopo do JavaScript, eliminando assim a necessidade de arquivos de estilo separados. Isso não apenas simplifica a organização do código, mas também proporciona um escopo encapsulado para os estilos, evitando conflitos.',
+    'Styled Components: Uma Revolução na Estilização em React',
+    'Styled Components é uma biblioteca para React que leva o CSS-IN-JS a um novo patamar. Ao utilizar a sintaxe elegante e expressiva do JavaScript para definir estilos, você cria componentes React estilizados de maneira intuitiva e dinâmica.',
+    'Principais Vantagens:',
+    '1. Encapsulamento Natural: Cada componente Styled Components encapsula seus estilos, evitando vazamento de estilos indesejados.',
+    '2. Interpolação Dinâmica: A integração perfeita de JavaScript permite interpolação dinâmica nos estilos, adaptando-se facilmente a diferentes estados e propriedades.',
+    '3. Manutenção Simplificada: Com estilos próximos ao código que os utiliza, a manutenção torna-se mais intuitiva e menos propensa a erros.',
+    '4. Reaproveitamento Eficiente: A reutilização de estilos é facilitada, promovendo uma abordagem DRY (Don\'t Repeat Yourself).',
+    'Como Utilizar:',
+    'Vamos explorar um exemplo básico de uso do Styled Components em React:',
+    '```javascript',
+    'import styled from \'styled-components\';',
+    'const StyledButton = styled.button`',
+    '  background-color: #3498db;',
+    '  color: #fff;',
+    '  padding: 10px 20px;',
+    '  border: none;',
+    '  border-radius: 5px;',
+    '  cursor: pointer;',
+    '  &:hover {',
+    '    background-color: #2980b9;',
+    '  }',
+    '`;',
+    'const MyComponent = () => {',
+    '  return (',
+    '    <div>',
+    '      <h1>Explorando Styled Components</h1>',
+    '      <StyledButton>Clique em Mim</StyledButton>',
+    '    </div>',
+    '  );',
+    '};',
+    '```',
+    'Conclusão:',
+    'Ao dominar CSS-IN-JS com Styled Components, você abre as portas para um desenvolvimento front-end mais elegante, modular e fácil de manter. Esta poderosa combinação não apenas transforma a estilização em uma experiência mais agradável, mas também impulsiona a eficiência do seu código React.',
+    'Esteja preparado para explorar um novo mundo de possibilidades estilísticas enquanto eleva a qualidade e a legibilidade do seu código. Que sua jornada em Styled Components seja tão empolgante quanto os resultados visuais incríveis que você está prestes a conquistar!',
+  ],
+  projectId: 'project2'
+};
+
+
+const articles = [article1, article2];
 
 const App = () => {
 
