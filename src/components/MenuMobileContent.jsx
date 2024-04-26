@@ -1,9 +1,19 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { FaGoogle, FaLinkedin, FaGithub, FaWhatsapp, FaInstagram } from 'react-icons/fa'
 import { IoIosArrowForward } from "react-icons/io";
 import PropTypes from 'prop-types';
 import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom';
+
+const slideInFromRight = keyframes`
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+`;
+
 
 const ContainerMobileContent = styled.div`
     background-color: #f8f8f8;
@@ -13,10 +23,11 @@ const ContainerMobileContent = styled.div`
     right: 0;
     bottom: 0;
     z-index: 777;
+    animation: ${slideInFromRight} 0.5s ease-in-out; 
     @media (min-width: 640px) {
         display: none;
     }
-`
+`;
 const ContainerHeaderMobileContent = styled.div`
     display: flex;
     justify-content: space-between;

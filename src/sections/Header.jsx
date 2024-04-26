@@ -12,7 +12,6 @@ const GlobalStyle = createGlobalStyle`
         padding: 0; 
     }
 `;
-
 const HeaderContainer = styled.header`
     padding: 2rem 1rem 1rem 1rem;
     display: flex;
@@ -22,13 +21,17 @@ const HeaderContainer = styled.header`
     max-width: 1300px;
     width: 100%;
     margin: 0 auto;
+    @media (max-width: 1024px) {
+        padding: 2rem 3rem 1rem 3rem;
+    }
+    @media (max-width: 600px) {
+        padding: 2rem 1.2rem 1rem 1.2rem;
+    }
 `;
-
 const TitleHeader = styled.h1`
     color: #000;
     font-weight: 600;
 `;
-
 const UlHeader = styled.ul`
     display: flex;
     align-items: center;
@@ -44,7 +47,6 @@ const UlHeader = styled.ul`
         display: none;
     }
 `;
-
 const NavHeader = styled.nav`
     display: flex;
     align-items: center;
