@@ -45,14 +45,14 @@ const Main = () => {
           imgalt={'Git'}
           titlearticle={t('main.mainTitleProject1')}
           descriptionarticle={t('main.mainDescriptionProject1')}
-          linktoknowbetter={'gittutorial'}
+          linktoknowbetter={'gitcommands'}
         />
         <Article
           imgproject={'styledcomponents.png'}
           imgalt={'Styled Components'}
           titlearticle={t('main.mainTitleProject2')}
           descriptionarticle={t('main.mainDescriptionProject2')}
-          linktoknowbetter={'styledcomponents'}
+          linktoknowbetter={'learnstyledcomponents'}
         />
       </AllArticles>
     </MainContainer>

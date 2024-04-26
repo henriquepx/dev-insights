@@ -1,8 +1,8 @@
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import BackToTop from '../components/BackToTop';
-import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
+import GitBanner from '/gitbanner.png'
 
 const showingText = keyframes`
   0% {
@@ -96,32 +96,29 @@ const LinkGoBack = styled(Link)`
   }
 `
 
-const ArticleView = ({ title, date, image, content, projectId }) => {
-  const { t } = useTranslation();
-  const translatedTitle = t(`projects.${projectId}.title`);
+const GitCommands = () => {
 
-  const translatedContent = content.map((paragraph, index) => t(`projects.${projectId}.content.${index}`));
+    const { t } = useTranslation();
 
   return (
     <ArticleViewContainer>
       <ArticleViewIntro>
-        <h1>{translatedTitle}</h1>
-        <p>{date}</p>
+        <h1>Git: Entenda os principais comandos.</h1>
+        <p>29/02/2024</p>
       </ArticleViewIntro>
-      <ImgBg src={image} alt={`Wallpaper ${title}`} />
+      <ImgBg src={GitBanner} alt="Wallpaper do Git" />
       <DescriptionArticleView>
         <TextsArticle>
-          {translatedContent.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
+                  <h2>Desvendando os Mistérios do Git: Guia Completo para Iniciantes e Além</h2>
+                  <p>No universo do desenvolvimento de software, o controle de versão é um pilar fundamental para a colaboração eficaz, rastreamento de alterações e garantia da integridade do código. Nesse contexto, o Git emerge como a ferramenta líder, proporcionando um robusto sistema de controle de versão distribuído.</p>
         </TextsArticle>
         <ShareArticle>
           <p>{t('viewarticle.shareArticle')}</p>
           <div>
-          <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(translatedTitle)}&url=https://dev-insights-self.vercel.app/`} target="_blank" rel="noreferrer">
+          <a href="" target="_blank" rel="noreferrer">
               <ImgRedes src="/twitter.svg" alt="Twitter" />
             </a>
-            <a href={`https://www.linkedin.com/sharing/share-offsite/?url=https://dev-insights-self.vercel.app/&title=${encodeURIComponent(translatedTitle)}`} target="_blank" rel="noreferrer">
+            <a href="" target="_blank" rel="noreferrer">
               <ImgRedes src="/linkedin.svg" alt="LinkedIn" />
             </a>
           </div>
@@ -130,15 +127,8 @@ const ArticleView = ({ title, date, image, content, projectId }) => {
       </DescriptionArticleView>
       <BackToTop />
     </ArticleViewContainer>
-  );
-};
+  )
+}
 
-ArticleView.propTypes = {
-  title: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  projectId: PropTypes.string.isRequired,
-  content: PropTypes.arrayOf(PropTypes.string).isRequired
-};
 
-export default ArticleView
+export default GitCommands
