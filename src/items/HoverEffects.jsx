@@ -47,7 +47,6 @@ const HoverEffects = () => {
 
   return (
       <HoverContainerButtons>
-          
           <ShareArticle>
           <p>{t('viewarticle.shareArticle')}</p>
           <div>

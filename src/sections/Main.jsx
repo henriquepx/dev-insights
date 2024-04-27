@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import Article from '../components/Article';
 import { useTranslation } from "react-i18next";
-import Components from '../components/Components';
+// import Components from '../components/Components';
 
 const showingText = keyframes`
   0% {
@@ -48,11 +48,11 @@ const Main = () => {
           descriptionarticle={t('main.mainDescriptionProject1')}
           linktoknowbetter={'gitcommands'}
         />
-        <Components
+        {/* <Components
           titlecomponent="[Componentes] Buttons Hover CSS Effects"
           descriptioncomponent="Explore uma variedade de efeitos de CSS Hover para seus botões nesta página. De transições suaves a animações vívidas, cada efeito foi cuidadosamente criado para adicionar um toque de interatividade e estilo aos seus componentes. Encontre inspiração e aprimore a experiência do usuário com esses recursos dinâmicos."
           linkcomponent={'hovereffects'}
-        />
+        /> */}
         <Article
           imgproject={'styledcomponents.png'}
           imgalt={'Styled Components'}
