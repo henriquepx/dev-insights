@@ -4,8 +4,9 @@ import GlobalStyles from './GlobalStyles';
 import Preloader from './components/Preloader';
 import Header from './sections/Header';
 import SobreMimPage from './pages/SobreMimPage';
-import LearnStyledComponents from './articles/LearnStyledComponents';
-import GitCommands from './articles/GitCommands';
+import LearnStyledComponents from './items/LearnStyledComponents';
+import GitCommands from './items/GitCommands';
+import HoverEffects from './items/HoverEffects';
 
 const App = () => {
 
@@ -29,6 +30,7 @@ const App = () => {
             <Route path='/' element={<SobreMimPage />} />
             <Route path='/learnstyledcomponents' element={<LearnStyledComponents />} />
             <Route path='/gitcommands' element={<GitCommands />} />
+            <Route path='/hovereffects' element={<HoverEffects />} />
           </Routes>
         </div>
       }
