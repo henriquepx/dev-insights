@@ -42,8 +42,8 @@ const LinkGoBack = styled(Link)`
   }
 `
 
-const HoverEffects = () => {
-    const { t } = useTranslation();
+const Interi18next = () => {
+  const { t } = useTranslation();
 
   return (
       <HoverContainerButtons>
@@ -64,4 +64,4 @@ const HoverEffects = () => {
   )
 }
 
-export default HoverEffects
+export default Interi18next

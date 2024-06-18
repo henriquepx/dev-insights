@@ -1,29 +1,19 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { FaGoogle, FaLinkedin, FaGithub, FaWhatsapp, FaInstagram } from 'react-icons/fa'
 import { IoIosArrowForward } from "react-icons/io";
 import PropTypes from 'prop-types';
 import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom';
 
-const slideInFromRight = keyframes`
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-`;
-
-
 const ContainerMobileContent = styled.div`
-    background-color: #f8f8f8;
-    height: 100%;
+    position: absolute;
     width: 100%;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 777;
-    animation: ${slideInFromRight} 0.5s ease-in-out; 
+    height: 100%;
+    right: ${props => props.isOpen ? '0' : '-100%'};
+    transition: right 0.3s ease-in-out;
+    top: 0;
+    z-index: 990;
+    background-color: #fff;
     @media (min-width: 640px) {
         display: none;
     }
@@ -45,24 +35,6 @@ const ContainerLinksMobileContent = styled.div`
                 color: #000;
                 font-weight: 600;
             }
-        }
-    }
-`
-const ClosingMenu = styled.div`
-    span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        transition: all 0.3s ease-in-out;
-        background-color: #000000;
-
-        &:nth-child(1) {
-            transform: rotate(45deg) translate(2px, 3px);
-        }
-
-        &:nth-child(2) {
-            transform: rotate(-45deg) translate(2px, -3px);
         }
     }
 `
@@ -148,32 +120,24 @@ const ChangingLanguageMobile = styled.div`
     }
 `
 
-const MenuMobileContent = ({ handleChangeLanguage, setMobileMenuOpen }) => {
-
-    const handleCloseMenu = () => {
-        setMobileMenuOpen(false);
-    };
+const MenuMobileContent = ({ handleChangeLanguage, isOpen }) => {
 
     const { t } = useTranslation();
 
   return (
-      <ContainerMobileContent>
+    <ContainerMobileContent isOpen={isOpen}>
         <ContainerMainMobileContent>
             <ContainerHeaderMobileContent>
                 <ChangingLanguageMobile>
                       <li><a onClick={() => handleChangeLanguage('pt')} href="#">PT</a></li>
                       <li><a onClick={() => handleChangeLanguage('en')} href="#">EN</a></li>
                 </ChangingLanguageMobile>
-                  <ClosingMenu onClick={handleCloseMenu}>
-                      <span></span>
-                      <span></span>
-                  </ClosingMenu>
             </ContainerHeaderMobileContent>
               
             <ContainerLinksMobileContent>
                 <ul>
                       <li>
-                          <Link to="/" onClick={handleCloseMenu}>
+                          <Link to="/">
                               {t('menumobile.home')}
                               <IoIosArrowForward size={22} />
                           </Link>
@@ -214,9 +178,8 @@ const MenuMobileContent = ({ handleChangeLanguage, setMobileMenuOpen }) => {
 }
 
 MenuMobileContent.propTypes = {
-    setMobileMenuOpen: PropTypes.func.isRequired,
     handleChangeLanguage: PropTypes.func.isRequired,
-    isMobileMenuOpen: PropTypes.bool.isRequired,
+    isOpen: PropTypes.bool,
 };
 
 

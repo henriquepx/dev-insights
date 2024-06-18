@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import Article from '../components/Article';
 import { useTranslation } from "react-i18next";
-// import Components from '../components/Components';
+import Components from '../components/Components';
 
 const showingText = keyframes`
   0% {
@@ -48,11 +48,11 @@ const Main = () => {
           descriptionarticle={t('main.mainDescriptionProject1')}
           linktoknowbetter={'gitcommands'}
         />
-        {/* <Components
-          titlecomponent="[Componentes] Buttons Hover CSS Effects"
-          descriptioncomponent="Explore uma variedade de efeitos de CSS Hover para seus botões nesta página. De transições suaves a animações vívidas, cada efeito foi cuidadosamente criado para adicionar um toque de interatividade e estilo aos seus componentes. Encontre inspiração e aprimore a experiência do usuário com esses recursos dinâmicos."
-          linkcomponent={'hovereffects'}
-        /> */}
+        <Components
+          titlecomponent="[Biblioteca] i18next - Internacionalização do projeto"
+          descriptioncomponent="O i18next é uma biblioteca poderosa para internacionalização de projetos web. Com uma estrutura flexível e abrangente, simplifica o processo de tradução e localização de conteúdo. Sua integração simples e recursos avançados tornam-no uma escolha popular entre os desenvolvedores, permitindo uma experiência de usuário mais inclusiva e personalizada em escala global."
+          linkcomponent={'i18next'}
+        />
         <Article
           imgproject={'styledcomponents.png'}
           imgalt={'Styled Components'}

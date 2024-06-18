@@ -1,17 +1,10 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom';
 import LanguageControl from '../components/LanguageControl';
 import MenuMobileContent from '../components/MenuMobileContent'; 
 
-const GlobalStyle = createGlobalStyle`
-    body {
-        overflow: ${(props) => (props.isMobileMenuOpen ? 'hidden' : 'visible')};
-        margin: 0; 
-        padding: 0; 
-    }
-`;
 const HeaderContainer = styled.header`
     padding: 2rem 1rem 1rem 1rem;
     display: flex;
@@ -51,15 +44,20 @@ const NavHeader = styled.nav`
     display: flex;
     align-items: center;
 `;
-
 const MenuHamburger = styled.div`
     cursor: pointer;
     padding: 3px 5px 0px 5px;
     border-radius: 10px;
     z-index: 10;
     display: none;
+    position: absolute;
+    right: 15px;
+    z-index: 999;
     @media (max-width: 640px) {
         display: block;
+    }
+    &.open {
+        right: 0;
     }
     span {
         display: block;
@@ -85,9 +83,13 @@ const Header = () => {
 
     const [currentLanguage, setCurrentLanguage] = useState(i18n.language);
     const [isLanguageOpen, setIsLanguageOpen] = useState(false);
-    const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const languageButtonRef = useRef(null);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+      };
 
     const handleChangeLanguage = (newLanguage) => {
         if (newLanguage !== currentLanguage) {
@@ -106,8 +108,6 @@ const Header = () => {
         }
     }, [setIsLanguageOpen, languageButtonRef]);
 
-    const handleMenuToggle = () => {setMobileMenuOpen(!isMobileMenuOpen)};
-
     useEffect(() => {
         document.addEventListener('mousedown', handleLanguageOutsideClick);
 
@@ -123,7 +123,7 @@ const Header = () => {
                 <NavHeader>
                     <UlHeader>
                         <li><Link to="/">{t('header.start')}</Link></li>
-                        <li><a href="https://portfolio-henriquepx.vercel.app/" target="_blank" rel="noopener noreferrer">{t('header.portfolio')}</a></li>
+                        <li><a href="https://henriquepx.vercel.app/" target="_blank" rel="noopener noreferrer">{t('header.portfolio')}</a></li>
                         <LanguageControl
                             isOpen={isLanguageOpen}
                             onToggle={handleLanguageClick}
@@ -131,21 +131,17 @@ const Header = () => {
                             languageButtonRef={languageButtonRef}
                         />
                     </UlHeader>
-                    <MenuHamburger onClick={handleMenuToggle}>
+                    <MenuHamburger onClick={toggleMenu} isOpen={isOpen} open={isOpen} >
                         <span></span>
                         <span></span>
                         <span></span>
                     </MenuHamburger>
+                    <MenuMobileContent
+                        handleChangeLanguage={handleChangeLanguage}
+                        isOpen={isOpen}
+                    />
                 </NavHeader>
             </div>
-            {isMobileMenuOpen && (
-                <MenuMobileContent
-                    handleChangeLanguage={handleChangeLanguage}
-                    setMobileMenuOpen={setMobileMenuOpen}
-                    isMobileMenuOpen={isMobileMenuOpen}
-                />
-            )}
-            <GlobalStyle isMobileMenuOpen={isMobileMenuOpen} />
         </HeaderContainer>
     );
 };
